@@ -43,6 +43,21 @@
     );
   }
 
+  // Where visitors came from: share links tagged like ?ref=whatsapp (or
+  // ?utm_source=...). Kept for the visit, so reading another page first
+  // still counts. Only short lowercase tags are kept; the database checks
+  // the same rule.
+  const refKey = 'verge_ref';
+  const params = new URLSearchParams(window.location.search);
+  const rawRef = (params.get('ref') || params.get('utm_source') || '').toLowerCase();
+  let ref = /^[a-z0-9_-]{1,40}$/.test(rawRef) ? rawRef : null;
+  try {
+    if (ref) sessionStorage.setItem(refKey, ref);
+    else ref = sessionStorage.getItem(refKey);
+  } catch (_) {
+    // Storage blocked (private mode): use this page's tag only.
+  }
+
   // Waitlist forms. Insert-only: the site can add an email but never read
   // the list. A repeat email comes back as 409 and is treated as success.
   document.querySelectorAll('form.waitlist').forEach((form) => {
@@ -81,7 +96,12 @@
             'Content-Type': 'application/json',
             Prefer: 'return=minimal',
           },
-          body: JSON.stringify({ email, source: form.dataset.source || 'site' }),
+          body: JSON.stringify({
+            email,
+            source: form.dataset.source || 'site',
+            heard_from: form.querySelector('select[name="heard_from"]')?.value || null,
+            ref,
+          }),
         });
 
         if (response.ok) {
