@@ -38,7 +38,7 @@
     <section class="hero">
       <div class="container">
         <div>
-          <span class="eyebrow">Coming soon to Android</span>
+          <span class="eyebrow">Coming to Android first · iPhone next</span>
           <h1>Know what's <em>safe to spend</em> today.</h1>
           <p class="lead">Verge brings your MoMo, bank and cash together and tells you how much you can spend today, without running dry before payday.</p>
           <form class="waitlist" data-source="hero" novalidate>
@@ -48,7 +48,15 @@
               <input id="email-hero" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
               <button class="btn" type="submit">Join the waitlist</button>
             </div>
-            <fieldset class="heard-from">
+            <div class="form-extra">
+            <fieldset class="chip-group" data-field="platform">
+              <legend>Your phone <span>Optional</span></legend>
+              <div class="chips">
+                <button type="button" class="chip" data-value="android" aria-pressed="false">Android</button>
+                <button type="button" class="chip" data-value="iphone" aria-pressed="false">iPhone</button>
+              </div>
+            </fieldset>
+            <fieldset class="chip-group" data-field="heard_from">
               <legend>How did you hear about Verge? <span>Optional</span></legend>
               <div class="chips">
                 <button type="button" class="chip" data-value="whatsapp" aria-pressed="false">WhatsApp</button>
@@ -62,8 +70,9 @@
                 <button type="button" class="chip" data-value="other" aria-pressed="false">Other</button>
               </div>
             </fieldset>
+            </div>
             <p class="form-status" role="status" aria-live="polite"></p>
-            <p class="form-note">One email when Verge launches. No spam, ever.</p>
+            <p class="form-note">On iPhone? Join anyway: we'll tell you the moment it's ready. No spam, ever.</p>
           </form>
         </div>
 
@@ -325,8 +334,10 @@
             <p>We're testing Verge now. Join the waitlist and we'll email you once when it's ready on Android.</p>
           </details>
           <details>
-            <summary>What about iPhone?</summary>
-            <p>Android comes first because most phones in Ghana run it. An iPhone version is planned; <a href="#android">here's why and what's coming</a>. Join the waitlist to hear when it's ready.</p>
+            <summary>I have an iPhone. Is Verge for me?</summary>
+            <p><strong>Yes.</strong> Verge is coming to iPhone too. We're starting on Android because most phones in Ghana run it, and it lets us make Verge fast on everyday phones (<a href="#android">more on why</a>).</p>
+            <p>The iPhone version is planned with everything that matters: Safe-to-Spend, bills, goals, insights, quick cash logging, App lock with Face ID and Sign in with Apple. The one thing iPhone won't have is automatic logging from text messages, because Apple doesn't let apps read them.</p>
+            <p>Join the waitlist and tap <strong>iPhone</strong> under "Your phone". The more iPhone users sign up, the sooner it comes, and we'll email you the moment it's ready.</p>
           </details>
           <details>
             <summary>What happens to my data?</summary>
@@ -348,7 +359,15 @@
               <input id="email-footer" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
               <button class="btn" type="submit">Join the waitlist</button>
             </div>
-            <fieldset class="heard-from">
+            <div class="form-extra">
+            <fieldset class="chip-group" data-field="platform">
+              <legend>Your phone <span>Optional</span></legend>
+              <div class="chips">
+                <button type="button" class="chip" data-value="android" aria-pressed="false">Android</button>
+                <button type="button" class="chip" data-value="iphone" aria-pressed="false">iPhone</button>
+              </div>
+            </fieldset>
+            <fieldset class="chip-group" data-field="heard_from">
               <legend>How did you hear about Verge? <span>Optional</span></legend>
               <div class="chips">
                 <button type="button" class="chip" data-value="whatsapp" aria-pressed="false">WhatsApp</button>
@@ -362,6 +381,7 @@
                 <button type="button" class="chip" data-value="other" aria-pressed="false">Other</button>
               </div>
             </fieldset>
+            </div>
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>

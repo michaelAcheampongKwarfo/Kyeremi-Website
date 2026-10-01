@@ -106,7 +106,8 @@ a:hover { color: var(--green-light); }
   font: inherit; font-size: 16px; color: var(--text);
 }
 .waitlist input[type='email']:focus { outline: none; border-color: var(--green-light); box-shadow: 0 0 0 4px var(--tint); }
-.waitlist .btn { min-height: 52px; }
+/* The label never wraps or overflows; the email box gives way instead. */
+.waitlist .btn { min-height: 52px; flex-shrink: 0; white-space: nowrap; }
 .waitlist .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-note { margin: 10px 4px 0; font-size: 13px; color: var(--muted); }
 .form-status { min-height: 1.5em; margin: 8px 4px 0; font-size: 14px; font-weight: 600; }
@@ -282,14 +283,14 @@ section { padding: 64px 0; }
 
 /* "How did you hear about Verge?": optional chips under the email box.
    Hidden until the person starts on their email, then they slide in. */
-.heard-from {
-  border: 0; margin: 0; padding: 0; min-width: 0;
+.form-extra {
   max-height: 0; opacity: 0; overflow: hidden; visibility: hidden;
   transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
 }
-.heard-from.show { max-height: 220px; opacity: 1; visibility: visible; margin-top: 16px; }
-.heard-from legend { padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 700; color: var(--green); }
-.heard-from legend span {
+.form-extra.show { max-height: 360px; opacity: 1; visibility: visible; margin-top: 16px; }
+.chip-group { border: 0; margin: 0 0 14px; padding: 0; min-width: 0; }
+.chip-group legend { padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 700; color: var(--green); }
+.chip-group legend span {
   margin-left: 6px; padding: 2px 8px; border-radius: 99px; background: var(--tint);
   font-size: 11px; font-weight: 600; color: var(--muted); vertical-align: 1px;
 }
@@ -305,5 +306,36 @@ section { padding: 64px 0; }
 .chip[aria-pressed='true'] { background: var(--green); border-color: var(--green); color: var(--white); }
 .chip[aria-pressed='true']::before { content: '✓ '; color: var(--gold); }
 @media (prefers-reduced-motion: reduce) {
-  .heard-from, .chip { transition: none; }
+  .form-extra, .chip { transition: none; }
+}
+
+/* ---------- Living gradients (subtle, slow; off for reduced motion) ---------- */
+.hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero::before {
+  content: ''; position: absolute; inset: -25%; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(38% 46% at 18% 30%, rgba(45, 106, 79, 0.16), transparent 70%),
+    radial-gradient(32% 40% at 82% 22%, rgba(212, 168, 83, 0.22), transparent 70%),
+    radial-gradient(42% 50% at 62% 88%, rgba(27, 67, 50, 0.10), transparent 70%);
+  animation: verge-drift 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes verge-drift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(3%, -2%, 0) rotate(5deg); }
+  100% { transform: translate3d(-3%, 2%, 0) rotate(-4deg); }
+}
+
+.sts-card {
+  background: linear-gradient(120deg, #1b4332 0%, #2d6a4f 35%, #1f5139 65%, #1b4332 100%);
+  background-size: 300% 300%;
+  animation: verge-sweep 14s ease-in-out infinite;
+}
+@keyframes verge-sweep {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .sts-card { animation: none; }
 }

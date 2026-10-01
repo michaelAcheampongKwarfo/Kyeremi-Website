@@ -62,25 +62,37 @@
   // the list. A repeat email comes back as 409 and is treated as success.
   document.querySelectorAll('form.waitlist').forEach((form) => {
     const input = form.querySelector('input[type="email"]');
-    const button = form.querySelector('button');
+    const button = form.querySelector('button[type="submit"]');
     const status = form.querySelector('.form-status');
     const trap = form.querySelector('input[name="website"]');
-    const heardFrom = form.querySelector('.heard-from');
-    const chips = [...form.querySelectorAll('.chip')];
+    const extra = form.querySelector('.form-extra');
+    const groups = [...form.querySelectorAll('.chip-group')];
 
-    // One answer at most; tapping the chosen one again clears it.
-    chips.forEach((chip) =>
-      chip.addEventListener('click', () => {
-        const wasOn = chip.getAttribute('aria-pressed') === 'true';
-        chips.forEach((c) => c.setAttribute('aria-pressed', 'false'));
-        chip.setAttribute('aria-pressed', String(!wasOn));
-      }),
-    );
-    const chosen = () =>
-      chips.find((c) => c.getAttribute('aria-pressed') === 'true')?.dataset.value || null;
+    // Each question takes one answer at most; tapping the chosen chip again
+    // clears it.
+    groups.forEach((group) => {
+      const chips = [...group.querySelectorAll('.chip')];
+      chips.forEach((chip) =>
+        chip.addEventListener('click', () => {
+          const wasOn = chip.getAttribute('aria-pressed') === 'true';
+          chips.forEach((c) => c.setAttribute('aria-pressed', 'false'));
+          chip.setAttribute('aria-pressed', String(!wasOn));
+        }),
+      );
+    });
+    // e.g. { platform: 'iphone', heard_from: 'tiktok' }; null if unanswered.
+    const answers = () =>
+      Object.fromEntries(
+        groups.map((group) => [
+          group.dataset.field,
+          group.querySelector('.chip[aria-pressed="true"]')?.dataset.value || null,
+        ]),
+      );
+    const clearAnswers = () =>
+      form.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', 'false'));
 
     // Keep the form short until someone starts signing up.
-    const reveal = () => heardFrom?.classList.add('show');
+    const reveal = () => extra?.classList.add('show');
     input.addEventListener('focus', reveal);
     input.addEventListener('input', reveal);
 
@@ -117,14 +129,14 @@
           body: JSON.stringify({
             email,
             source: form.dataset.source || 'site',
-            heard_from: chosen(),
+            ...answers(),
             ref,
           }),
         });
 
         if (response.ok) {
           form.reset();
-          chips.forEach((c) => c.setAttribute('aria-pressed', 'false'));
+          clearAnswers();
           show("You're on the list. We'll email you once when Verge launches.", 'success');
         } else if (response.status === 409) {
           show("You're already on the list. We'll be in touch.", 'success');

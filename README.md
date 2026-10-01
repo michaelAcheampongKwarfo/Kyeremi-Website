@@ -48,3 +48,12 @@ from public.waitlist
 group by 1, 2
 order by signups desc;
 ```
+
+How many sign-ups are on iPhone (to decide when to build iOS):
+
+```sql
+select coalesce(platform, '(not answered)') as phone, count(*) as signups
+from public.waitlist
+group by 1
+order by signups desc;
+```
