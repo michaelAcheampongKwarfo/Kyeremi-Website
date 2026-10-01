@@ -65,6 +65,24 @@
     const button = form.querySelector('button');
     const status = form.querySelector('.form-status');
     const trap = form.querySelector('input[name="website"]');
+    const heardFrom = form.querySelector('.heard-from');
+    const chips = [...form.querySelectorAll('.chip')];
+
+    // One answer at most; tapping the chosen one again clears it.
+    chips.forEach((chip) =>
+      chip.addEventListener('click', () => {
+        const wasOn = chip.getAttribute('aria-pressed') === 'true';
+        chips.forEach((c) => c.setAttribute('aria-pressed', 'false'));
+        chip.setAttribute('aria-pressed', String(!wasOn));
+      }),
+    );
+    const chosen = () =>
+      chips.find((c) => c.getAttribute('aria-pressed') === 'true')?.dataset.value || null;
+
+    // Keep the form short until someone starts signing up.
+    const reveal = () => heardFrom?.classList.add('show');
+    input.addEventListener('focus', reveal);
+    input.addEventListener('input', reveal);
 
     const show = (message, kind) => {
       status.textContent = message;
@@ -99,13 +117,14 @@
           body: JSON.stringify({
             email,
             source: form.dataset.source || 'site',
-            heard_from: form.querySelector('select[name="heard_from"]')?.value || null,
+            heard_from: chosen(),
             ref,
           }),
         });
 
         if (response.ok) {
           form.reset();
+          chips.forEach((c) => c.setAttribute('aria-pressed', 'false'));
           show("You're on the list. We'll email you once when Verge launches.", 'success');
         } else if (response.status === 409) {
           show("You're already on the list. We'll be in touch.", 'success');
