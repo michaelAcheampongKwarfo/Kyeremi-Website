@@ -7,11 +7,20 @@
     const value = config[el.dataset.config];
     if (value) el.textContent = value;
   });
+  // Phones open their mail app from a mailto: link. Most computers have no
+  // mail app set up (people use Gmail in the browser), so a mailto: link
+  // does nothing there: on computers, open Gmail's compose window instead.
+  const isComputer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   document.querySelectorAll('[data-config-mailto]').forEach((el) => {
-    const subject = el.dataset.subject
-      ? `?subject=${encodeURIComponent(el.dataset.subject)}`
-      : '';
-    el.href = `mailto:${config.supportEmail}${subject}`;
+    const to = encodeURIComponent(config.supportEmail);
+    const subject = el.dataset.subject ? encodeURIComponent(el.dataset.subject) : '';
+    if (isComputer) {
+      el.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}${subject ? `&su=${subject}` : ''}`;
+      el.target = '_blank';
+      el.rel = 'noopener';
+    } else {
+      el.href = `mailto:${config.supportEmail}${subject ? `?subject=${subject}` : ''}`;
+    }
   });
 
   document.querySelectorAll('[data-year]').forEach((el) => {
