@@ -50,24 +50,23 @@
           <li>Bills, your payday schedule, savings goals and contributions, and your safety buffer.</li>
         </ul>
         <h2>Where your money records are kept, and why</h2>
-        <p>Your accounts, balances, transactions, bills, goals and safety buffer are stored <strong>on your phone</strong>, in Verge's private app storage. We built it this way on purpose:</p>
+        <p>Your accounts, balances, transactions, bills, goals and safety buffer are kept <strong>on your phone first</strong>, in Verge's private app storage, with a <strong>backup copy</strong> on our servers while you're signed in.</p>
         <ul>
-          <li><strong>Privacy:</strong> your financial records aren't sitting on our servers. Android keeps each app's storage separate, so other apps on your phone can't read Verge's data, and phones running modern Android encrypt this storage.</li>
-          <li><strong>Reliability:</strong> Verge works fully without internet or data bundles.</li>
-          <li><strong>Control:</strong> signing out or deleting your account removes these records from your phone.</li>
+          <li><strong>On your phone:</strong> every screen reads from your phone, so Verge works fully without internet or data bundles. Android keeps each app's storage separate, so other apps can't read Verge's data, and phones running modern Android encrypt this storage.</li>
+          <li><strong>Backed up:</strong> a few seconds after you make a change (and whenever you're back online), Verge copies it to your backup, so a lost or new phone doesn't mean lost records.</li>
         </ul>
-        <p>We have also turned off Android's automatic app backup for Verge, so your records are not copied into a Google Drive backup without you knowing.</p>
-        <div class="callout">
-          <p><strong>What this means for you today:</strong> if you lose your phone, uninstall Verge or sign out, the records on that phone can't be recovered. Online backup (below) is planned to fix this.</p>
-        </div>
+        <p>We have turned off Android's automatic app backup for Verge, so your records are not also copied into a Google Drive backup without you knowing. Verge's own backup is the only copy outside your phone.</p>
 
-        <h3>Online backup (coming soon)</h3>
-        <p>We plan to add a backup so you can restore your records on a new phone. Before it is switched on, we will update this policy and explain it in the app. It will work like this:</p>
+        <h3>What the backup holds</h3>
         <ul>
-          <li><strong>What would be backed up:</strong> your accounts (names, balances and, if you added them, the last 4 digits), transactions, bills, payday schedule, goals and contributions, and your safety buffer.</li>
-          <li><strong>What would never be backed up:</strong> full account or card numbers (Verge never has them), your MoMo PIN or passwords, and phone-only settings such as reminder times and App lock.</li>
-          <li><strong>Who can read it:</strong> only you, when signed in. Our database lets each person read and change only their own records, and data is encrypted in transit and stored with our database provider, Supabase.</li>
+          <li><strong>Backed up:</strong> your accounts (names, balances and, if you added them, the last 4 digits), transactions, bills, payday schedule, goals and contributions, and your safety buffer.</li>
+          <li><strong>Never backed up:</strong> full account or card numbers (Verge never has them), your MoMo PIN or passwords, and phone-only settings such as reminder times and App lock.</li>
+          <li><strong>Who can read it:</strong> only you, when signed in. Our database lets each person read and change only their own records. Data is encrypted in transit and stored with our database provider, Supabase, whose servers may be outside Ghana.</li>
+          <li><strong>How long it's kept:</strong> until you delete your account, which deletes the backup with it. Records you delete in the app are marked deleted in the backup too, so they disappear from your other phones.</li>
         </ul>
+        <div class="callout">
+          <p><strong>New or lost phone?</strong> Install Verge and sign in with the same account; your records are restored automatically. Changes made while offline are backed up when you reconnect. If you sign out before they've been backed up, Verge warns you first.</p>
+        </div>
 
         <h2>App lock</h2>
         <p>You can turn on App lock in Settings → Security. Verge then asks for your <strong>phone's own fingerprint, face unlock or passcode</strong> every time it opens, and again if you've been away for more than a minute. Verge never sees or stores your fingerprint, face or passcode: your phone checks them and only tells Verge whether the check passed.</p>
@@ -97,7 +96,7 @@
         <h2>Who we share it with</h2>
         <p>We use a small number of service providers who process data on our behalf, only to run Verge:</p>
         <ul>
-          <li><strong>Supabase</strong>: our account and database provider (sign-in, your profile, and the waitlist).</li>
+          <li><strong>Supabase</strong>: our account and database provider (sign-in, your profile, your backup and the waitlist).</li>
           <li><strong>Google</strong>: if you choose "Continue with Google", to confirm who you are.</li>
           <li><strong>Hubtel</strong>: to send sign-in codes by text message, when phone sign-in is available. Hubtel receives your phone number and the code.</li>
         </ul>
@@ -113,7 +112,7 @@
         </ul>
 
         <h2>How long we keep it</h2>
-        <p>We keep your account information until you delete your account. Records stored on your phone stay there until you delete them, sign out or uninstall the app. Waitlist emails are kept until Verge launches and we have emailed you, or until you ask us to remove yours.</p>
+        <p>We keep your account information and backup until you delete your account. Records on your phone stay there until you sign out, delete your account or uninstall the app. Waitlist emails are kept until Verge launches and we have emailed you, or until you ask us to remove yours.</p>
 
         <h2>Your rights</h2>
         <p>Under the Data Protection Act, you can ask to see the information we hold about you, have it corrected, or have it deleted, and you can object to how we use it.</p>
@@ -127,7 +126,7 @@
         <p>Verge is for people aged 18 and over. When you create an account, you confirm that you are 18 or older, and the app is listed for adults in app stores. Because Verge never holds money, we don't ask for ID documents to check age. If you believe someone under 18 has created an account, email us and we will delete it.</p>
 
         <h2>Changes to this policy</h2>
-        <p>If we change this policy, we'll update the date at the top. For important changes, such as online backup or SMS reading, we'll tell you in the app before they take effect.</p>
+        <p>If we change this policy, we'll update the date at the top. For important changes, such as SMS reading, we'll tell you in the app before they take effect.</p>
       </article>
     </div>
   </main>
