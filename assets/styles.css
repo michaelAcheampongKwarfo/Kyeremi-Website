@@ -269,6 +269,12 @@ section { padding: 64px 0; }
 }
 
 /* ---------- Two-column panels (planning, accuracy, Android) ---------- */
+/* Promo video: portrait, so it stays phone-sized and centred. */
+.promo { justify-self: center; width: min(320px, 100%); }
+.promo video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 28px; background: var(--green); box-shadow: var(--shadow); }
+.watch-link { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--green); text-decoration: none; }
+.watch-link:hover { text-decoration: underline; }
+
 .split { display: grid; gap: 16px; }
 .split-center { gap: 32px; align-items: center; }
 @media (min-width: 860px) {

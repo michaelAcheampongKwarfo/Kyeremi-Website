@@ -58,10 +58,22 @@
     // Storage blocked (private mode): use this page's tag only.
   }
 
-  // Waitlist forms. Insert-only: the site can add an email but never read
-  // the list. A repeat email comes back as 409 and is treated as success.
+  // An email, or a Ghana mobile number in any common form (024 123 4567,
+  // 0241234567, +233 24 123 4567), which becomes +233241234567. The database
+  // checks the same rules. Returns null if it's neither.
+  const parseContact = (raw) => {
+    const value = raw.trim();
+    if (value.includes('@')) {
+      return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value) ? { email: value } : null;
+    }
+    const match = value.replace(/[\s().-]/g, '').match(/^(?:\+?233|0)([25]\d{8})$/);
+    return match ? { phone: `+233${match[1]}` } : null;
+  };
+
+  // Waitlist forms. Insert-only: the site can add a sign-up but never read
+  // the list. A repeat email or number comes back as 409 and counts as success.
   document.querySelectorAll('form.waitlist').forEach((form) => {
-    const input = form.querySelector('input[type="email"]');
+    const input = form.querySelector('input[name="contact"]');
     const button = form.querySelector('button[type="submit"]');
     const status = form.querySelector('.form-status');
     const trap = form.querySelector('input[name="website"]');
@@ -114,10 +126,10 @@
     status.after(offer);
     const offerButton = offer.querySelector('button');
     const offerStatus = offer.querySelector('.form-status');
-    let joinedEmail = null;
+    let joined = null;
 
-    const showOffer = (email) => {
-      joinedEmail = email;
+    const showOffer = (contact) => {
+      joined = contact;
       offerButton.hidden = false;
       offerButton.disabled = false;
       offerStatus.textContent = '';
@@ -130,11 +142,11 @@
         const response = await fetch(`${config.supabaseUrl}/rest/v1/rpc/waitlist_offer_to_test`, {
           method: 'POST',
           headers: { apikey: config.supabaseKey, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ p_email: joinedEmail }),
+          body: JSON.stringify(joined.email ? { p_email: joined.email } : { p_phone: joined.phone }),
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         offerButton.hidden = true;
-        offerStatus.textContent = "Thanks! We'll email you a Play Store link before launch.";
+        offerStatus.textContent = "Thanks! We'll send you a Play Store link before launch.";
         offerStatus.dataset.kind = 'success';
       } catch (_) {
         offerStatus.textContent = "Couldn't save that. Check your connection and try again.";
@@ -148,9 +160,9 @@
       // Bots fill every field; people never see this one.
       if (trap && trap.value) return;
 
-      const email = input.value.trim();
-      if (!input.checkValidity() || !email) {
-        show('Enter a valid email address.', 'error');
+      const contact = parseContact(input.value);
+      if (!contact) {
+        show('Enter your email, or a Ghana phone number like 024 123 4567.', 'error');
         input.focus();
         return;
       }
@@ -171,7 +183,7 @@
             Prefer: 'return=minimal',
           },
           body: JSON.stringify({
-            email,
+            ...contact,
             source: form.dataset.source || 'site',
             ...answers(),
             ref,
@@ -181,13 +193,16 @@
         if (response.ok) {
           form.reset();
           clearAnswers();
-          show("You're on the list. We'll email you once when Verge launches.", 'success');
-          if (platform !== 'iphone') showOffer(email);
+          show(
+            `You're on the list. We'll ${contact.email ? 'email' : 'text'} you once when Verge launches.`,
+            'success',
+          );
+          if (platform !== 'iphone') showOffer(contact);
         } else if (response.status === 409) {
           show("You're already on the list. We'll be in touch.", 'success');
-          if (platform !== 'iphone') showOffer(email);
+          if (platform !== 'iphone') showOffer(contact);
         } else if (response.status === 400) {
-          show('That email address doesn’t look right. Please check it.', 'error');
+          show('That doesn’t look right. Please check it.', 'error');
         } else {
           throw new Error(`HTTP ${response.status}`);
         }
