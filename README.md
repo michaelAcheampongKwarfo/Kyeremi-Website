@@ -19,7 +19,9 @@ The forms add emails to the `waitlist` table in the Verge Supabase project (migr
 
 ## Publishing
 Settings → Pages → Source: **Deploy from a branch**, branch **main**, folder **/ (root)**.
-The site is then at `https://michaelacheampongkwarfo.github.io/Verge-Finance/`.
+Custom domain: **vergefinance.app** (Settings → Pages → Custom domain, with Enforce HTTPS). The domain is registered at Cloudflare. Its DNS records point at GitHub Pages and must stay **DNS only** (grey cloud), or GitHub can't issue the HTTPS certificate. The old `michaelacheampongkwarfo.github.io/Verge-Finance/` address redirects here.
+
+The site lives at the domain root, so `404.html` uses root paths (`/assets/...`).
 
 ## Before launch
 - Replace the placeholder support email and business name in `assets/config.js`.
@@ -32,7 +34,7 @@ Each sign-up can record two things:
 
 | Where you share | Link |
 |---|---|
-| WhatsApp status / groups | `https://michaelacheampongkwarfo.github.io/Verge-Finance/?ref=whatsapp` |
+| WhatsApp status / groups | `https://vergefinance.app/?ref=whatsapp` |
 | TikTok bio | `...?ref=tiktok` |
 | Instagram bio | `...?ref=instagram` |
 | X (Twitter) | `...?ref=x` |
