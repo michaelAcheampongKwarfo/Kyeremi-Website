@@ -23,6 +23,8 @@ Custom domain: **vergefinance.app** (Settings → Pages → Custom domain, with 
 
 The site lives at the domain root, so `404.html` uses root paths (`/assets/...`).
 
+**After changing `styles.css`, `main.js` or `config.js`,** bump the `?v=` tag on their links in every page (e.g. `?v=20261002` → `?v=20261015`). GitHub Pages lets browsers reuse these files for 10 minutes, so without a new tag a returning visitor can get the new page with the old styles, and it looks broken.
+
 ## Before launch
 - Replace the placeholder support email and business name in `assets/config.js`.
 - Have the Privacy Policy and Terms reviewed (Ghana Data Protection Act, 2012, Act 843).
