@@ -61,10 +61,7 @@ a:hover { color: var(--green-light); }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--green); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
-.brand-mark {
-  width: 32px; height: 32px; border-radius: 10px; background: var(--green); color: var(--gold);
-  display: grid; place-items: center; font-size: 18px; font-weight: 800;
-}
+.brand-mark { width: 32px; height: 32px; flex: none; display: block; }
 
 .nav-toggle {
   display: inline-flex; align-items: center; justify-content: center;
@@ -76,13 +73,15 @@ a:hover { color: var(--green-light); }
   background: var(--cream); border-bottom: 1px solid var(--line);
 }
 .nav-links.open { display: flex; }
-.nav-links a { text-decoration: none; font-weight: 600; color: var(--text); padding: 10px 4px; }
+.nav-links a { text-decoration: none; font-weight: 600; color: var(--text); }
+/* :not(.btn) so the waitlist button keeps its own padding. */
+.nav-links a:not(.btn) { padding: 10px 4px; }
 .nav-links .btn { margin-top: 8px; }
 
 @media (min-width: 860px) {
   .nav-toggle { display: none; }
   .nav-links { display: flex; position: static; flex-direction: row; align-items: center; gap: 28px; padding: 0; background: none; border: 0; }
-  .nav-links a { padding: 0; }
+  .nav-links a:not(.btn) { padding: 0; }
   .nav-links .btn { margin-top: 0; }
 }
 
@@ -217,6 +216,7 @@ section { padding: 64px 0; }
 .faq summary::after { content: '+'; position: absolute; right: 0; top: 12px; font-size: 22px; color: var(--green-light); }
 .faq details[open] summary::after { content: '–'; }
 .faq details p { margin: 0 0 16px; color: var(--muted); }
+.faq details p strong { color: var(--green); }
 
 .cta-band { background: var(--white); border-radius: 32px; padding: 40px 24px; text-align: center; box-shadow: var(--shadow); }
 .cta-band h2 { margin-bottom: 12px; }
