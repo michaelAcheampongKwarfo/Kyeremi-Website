@@ -13,5 +13,5 @@ window.VERGE_CONFIG = {
   supabaseUrl: 'https://nffevmvtjfllckourbel.supabase.co',
   supabaseKey: 'sb_publishable_yDPFIktoe2952_Dm1nPL9A_MHMx5b5x',
 
-  lastUpdated: '1 October 2026',
+  lastUpdated: '2 October 2026',
 };

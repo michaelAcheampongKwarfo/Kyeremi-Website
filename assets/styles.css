@@ -112,6 +112,11 @@ a:hover { color: var(--green-light); }
 .form-status { min-height: 1.5em; margin: 8px 4px 0; font-size: 14px; font-weight: 600; }
 .form-status[data-kind='success'] { color: var(--green-light); }
 .form-status[data-kind='error'] { color: var(--error); }
+.tester-offer { margin-top: 12px; padding: 16px 18px; border-radius: 16px; background: var(--tint); text-align: left; }
+.waitlist .tester-offer p { margin: 0 0 12px; max-width: none; font-size: 14px; color: var(--text); }
+.waitlist .tester-offer strong { color: var(--green); }
+.waitlist .tester-offer .form-status { margin: 8px 0 0; }
+.waitlist .tester-offer .form-status:empty { display: none; }
 
 @media (min-width: 520px) {
   .waitlist-row { flex-direction: row; }

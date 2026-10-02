@@ -101,6 +101,48 @@
       status.dataset.kind = kind;
     };
 
+    // Once someone has joined, offer early testing. Asked here, not on the
+    // form, so joining stays one step. Not offered to iPhone users: testing
+    // starts on Android.
+    const offer = document.createElement('div');
+    offer.className = 'tester-offer';
+    offer.hidden = true;
+    offer.innerHTML = `
+      <p><strong>Want to try Verge before everyone else?</strong> We'll send testers a Play Store link before launch. Use Verge for two weeks and tell us what's confusing.</p>
+      <button class="btn btn-small" type="button">Yes, I'd like to test</button>
+      <p class="form-status" role="status" aria-live="polite"></p>`;
+    status.after(offer);
+    const offerButton = offer.querySelector('button');
+    const offerStatus = offer.querySelector('.form-status');
+    let joinedEmail = null;
+
+    const showOffer = (email) => {
+      joinedEmail = email;
+      offerButton.hidden = false;
+      offerButton.disabled = false;
+      offerStatus.textContent = '';
+      offer.hidden = false;
+    };
+
+    offerButton.addEventListener('click', async () => {
+      offerButton.disabled = true;
+      try {
+        const response = await fetch(`${config.supabaseUrl}/rest/v1/rpc/waitlist_offer_to_test`, {
+          method: 'POST',
+          headers: { apikey: config.supabaseKey, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ p_email: joinedEmail }),
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        offerButton.hidden = true;
+        offerStatus.textContent = "Thanks! We'll email you a Play Store link before launch.";
+        offerStatus.dataset.kind = 'success';
+      } catch (_) {
+        offerStatus.textContent = "Couldn't save that. Check your connection and try again.";
+        offerStatus.dataset.kind = 'error';
+        offerButton.disabled = false;
+      }
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       // Bots fill every field; people never see this one.
@@ -117,6 +159,8 @@
       const label = button.textContent;
       button.textContent = 'Joining…';
       show('', '');
+      offer.hidden = true;
+      const { platform } = answers();
 
       try {
         const response = await fetch(`${config.supabaseUrl}/rest/v1/waitlist`, {
@@ -138,8 +182,10 @@
           form.reset();
           clearAnswers();
           show("You're on the list. We'll email you once when Verge launches.", 'success');
+          if (platform !== 'iphone') showOffer(email);
         } else if (response.status === 409) {
           show("You're already on the list. We'll be in touch.", 'success');
+          if (platform !== 'iphone') showOffer(email);
         } else if (response.status === 400) {
           show('That email address doesn’t look right. Please check it.', 'error');
         } else {
