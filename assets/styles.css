@@ -99,12 +99,12 @@ a:hover { color: var(--green-light); }
 
 .waitlist { width: 100%; max-width: 480px; }
 .waitlist-row { display: flex; flex-direction: column; gap: 10px; }
-.waitlist input[type='email'] {
+.waitlist input[name='contact'] {
   flex: 1; min-width: 0; min-height: 52px; padding: 0 18px;
   border: 1.5px solid var(--line); border-radius: 999px; background: var(--white);
   font: inherit; font-size: 16px; color: var(--text);
 }
-.waitlist input[type='email']:focus { outline: none; border-color: var(--green-light); box-shadow: 0 0 0 4px var(--tint); }
+.waitlist input[name='contact']:focus { outline: none; border-color: var(--green-light); box-shadow: 0 0 0 4px var(--tint); }
 /* The label never wraps or overflows; the email box gives way instead. */
 .waitlist .btn { min-height: 52px; flex-shrink: 0; white-space: nowrap; }
 .waitlist .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
@@ -269,9 +269,11 @@ section { padding: 64px 0; }
 }
 
 /* ---------- Two-column panels (planning, accuracy, Android) ---------- */
-/* Promo video: portrait, so it stays phone-sized and centred. */
-.promo { justify-self: center; width: min(320px, 100%); }
-.promo video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 28px; background: var(--green); box-shadow: var(--shadow); }
+/* Promo video: landscape, centred under its heading. */
+.promo-head { margin-left: auto; margin-right: auto; text-align: center; }
+.promo { max-width: 960px; margin: 0 auto; }
+.promo video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 24px; background: var(--green); box-shadow: var(--shadow); }
+.promo-cta { margin: 28px 0 0; text-align: center; }
 .watch-link { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--green); text-decoration: none; }
 .watch-link:hover { text-decoration: underline; }
 
