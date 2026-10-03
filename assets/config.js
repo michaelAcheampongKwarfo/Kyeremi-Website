@@ -3,9 +3,11 @@
 window.VERGE_CONFIG = {
   supportEmail: 'vergefinancesupport@gmail.com',
 
-  // TODO: replace with the registered business name (as on the Registrar
-  // of Companies certificate) once confirmed.
-  businessName: 'Verge Finance',
+  // Who runs Verge, as named in the privacy policy, terms and footers. A
+  // person for now (Verge is a solo project, not a registered business); it
+  // must match the name verified on the Google Play developer account. If a
+  // business is registered, put its name exactly as on the certificate.
+  operator: 'Kwarfo Michael Acheampong',
 
   // Same Supabase project as the app. The publishable key is public by
   // design: row-level security only lets the website add to the waitlist,
