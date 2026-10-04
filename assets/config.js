@@ -1,7 +1,7 @@
 // Everything on the site that may change lives here. Pages fill elements
 // marked data-config="key" from these values.
 window.VERGE_CONFIG = {
-  supportEmail: 'vergefinancesupport@gmail.com',
+  supportEmail: 'support@vergefinance.app',
 
   // Who runs Verge, as named in the privacy policy, terms and footers. A
   // person for now (Verge is a solo project, not a registered business); it
