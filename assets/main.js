@@ -1,5 +1,5 @@
 (function () {
-  const config = window.VERGE_CONFIG || {};
+  const config = window.KYEREMI_CONFIG || {};
 
   // Fill placeholders: data-config="supportEmail" etc. Links with
   // data-config-mailto get a mailto: href, optionally with a subject.
@@ -47,7 +47,7 @@
   // ?utm_source=...). Kept for the visit, so reading another page first
   // still counts. Only short lowercase tags are kept; the database checks
   // the same rule.
-  const refKey = 'verge_ref';
+  const refKey = 'kyeremi_ref';
   const params = new URLSearchParams(window.location.search);
   const rawRef = (params.get('ref') || params.get('utm_source') || '').toLowerCase();
   let ref = /^[a-z0-9_-]{1,40}$/.test(rawRef) ? rawRef : null;
@@ -120,7 +120,7 @@
     offer.className = 'tester-offer';
     offer.hidden = true;
     offer.innerHTML = `
-      <p><strong>Want to try Verge before everyone else?</strong> We'll send testers a Play Store link before launch. Use Verge for two weeks and tell us what's confusing.</p>
+      <p><strong>Want to try Kyeremi before everyone else?</strong> We'll send testers a Play Store link before launch. Use Kyeremi for two weeks and tell us what's confusing.</p>
       <button class="btn btn-small" type="button">Yes, I'd like to test</button>
       <p class="form-status" role="status" aria-live="polite"></p>`;
     status.after(offer);
@@ -194,7 +194,7 @@
           form.reset();
           clearAnswers();
           show(
-            `You're on the list. We'll ${contact.email ? 'email' : 'text'} you once when Verge launches.`,
+            `You're on the list. We'll ${contact.email ? 'email' : 'text'} you once when Kyeremi launches.`,
             'success',
           );
           if (platform !== 'iphone') showOffer(contact);

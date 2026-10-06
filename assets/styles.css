@@ -1,4 +1,4 @@
-/* Verge website. Colours and type match the app (lib/widgets/app_colors.dart). */
+/* Kyeremi website. Colours and type match the app (lib/widgets/app_colors.dart). */
 :root {
   --green: #1b4332;
   --green-light: #2d6a4f;
@@ -295,7 +295,7 @@ section { padding: 64px 0; }
 .footer-contact { margin-top: 6px; }
 .footer-contact a { color: var(--green); font-weight: 600; word-break: break-all; }
 
-/* "How did you hear about Verge?": optional chips under the email box.
+/* "How did you hear about Kyeremi?": optional chips under the email box.
    Hidden until the person starts on their email, then they slide in. */
 .form-extra {
   max-height: 0; opacity: 0; overflow: hidden; visibility: hidden;
@@ -331,10 +331,10 @@ section { padding: 64px 0; }
     radial-gradient(38% 46% at 18% 30%, rgba(45, 106, 79, 0.16), transparent 70%),
     radial-gradient(32% 40% at 82% 22%, rgba(212, 168, 83, 0.22), transparent 70%),
     radial-gradient(42% 50% at 62% 88%, rgba(27, 67, 50, 0.10), transparent 70%);
-  animation: verge-drift 20s ease-in-out infinite alternate;
+  animation: kyeremi-drift 20s ease-in-out infinite alternate;
   will-change: transform;
 }
-@keyframes verge-drift {
+@keyframes kyeremi-drift {
   0% { transform: translate3d(0, 0, 0) rotate(0deg); }
   50% { transform: translate3d(3%, -2%, 0) rotate(5deg); }
   100% { transform: translate3d(-3%, 2%, 0) rotate(-4deg); }
@@ -343,9 +343,9 @@ section { padding: 64px 0; }
 .sts-card {
   background: linear-gradient(120deg, #1b4332 0%, #2d6a4f 35%, #1f5139 65%, #1b4332 100%);
   background-size: 300% 300%;
-  animation: verge-sweep 14s ease-in-out infinite;
+  animation: kyeremi-sweep 14s ease-in-out infinite;
 }
-@keyframes verge-sweep {
+@keyframes kyeremi-sweep {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
