@@ -19,7 +19,7 @@ The forms add emails to the `waitlist` table in the Kyeremi Supabase project (mi
 
 ## Publishing
 Settings → Pages → Source: **Deploy from a branch**, branch **main**, folder **/ (root)**.
-Custom domain: **kyeremi.app** (Settings → Pages → Custom domain, with Enforce HTTPS). The domain is registered at Cloudflare. Its DNS records point at GitHub Pages and must stay **DNS only** (grey cloud), or GitHub can't issue the HTTPS certificate. The old `michaelacheampongkwarfo.github.io/Verge-Finance/` address redirects here.
+Custom domain: **kyeremi.app** (Settings → Pages → Custom domain, with Enforce HTTPS). The domain is registered at Cloudflare. Its DNS records point at GitHub Pages and must stay **DNS only** (grey cloud), or GitHub can't issue the HTTPS certificate. `michaelacheampongkwarfo.github.io/Kyeremi-Website/` redirects here (the repo was called Verge-Finance until 7 Oct 2026; that old github.io address no longer works).
 
 The site lives at the domain root, so `404.html` uses root paths (`/assets/...`).
 
