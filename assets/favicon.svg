@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <title>Kyeremi</title>
+  <!-- The official mark ("Today", 9 Oct 2026): an ɛ that grows from a small c
+       into a big C holding a gold coin, today's safe amount. -->
   <rect width="512" height="512" rx="112" fill="#1b4332"/>
-  <path d="M150 150 L256 336 L362 150" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M140 400 H372" fill="none" stroke="#d4a853" stroke-width="24" stroke-linecap="round"/>
+  <g transform="translate(256 256) scale(1.1) translate(-262 -240)">
+    <path d="M297.7 133.7 A44 44 0 1 0 264 206 L266 206 A78 78 0 1 0 325.8 334.1" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="336" cy="262" r="30" fill="#d4a853"/>
+  </g>
 </svg>
