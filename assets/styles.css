@@ -458,3 +458,38 @@ section { padding: 64px 0; }
 .float-cta.show { transform: translate(-50%, 0); opacity: 1; }
 .float-cta:hover { background: var(--green-light); }
 @media (prefers-reduced-motion: reduce) { .float-cta { transition: none; } }
+
+
+/* ---------- Legal pages, landing-page style (Oct 2026) ---------- */
+.legal { padding: 0 0 72px; }
+.legal-hero { position: relative; overflow: hidden; isolation: isolate; padding: 48px 0 40px; }
+.legal-hero::before {
+  content: ''; position: absolute; inset: -30%; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(36% 50% at 15% 30%, rgba(45, 106, 79, 0.14), transparent 70%),
+    radial-gradient(30% 44% at 85% 20%, rgba(212, 168, 83, 0.20), transparent 70%);
+}
+.legal-hero h1 { font-size: clamp(34px, 6vw, 52px); margin: 0 0 10px; }
+.legal-hero .updated { color: var(--muted); font-size: 14.5px; margin: 0; }
+.legal-summary {
+  margin-top: 24px; max-width: 760px; padding: 22px 24px; border-radius: 24px;
+  background: var(--green); color: rgba(255, 255, 255, 0.9); box-shadow: var(--shadow);
+}
+.legal-summary p { margin: 0; font-size: 16.5px; }
+.legal-summary strong { color: var(--gold); }
+.legal-body { display: grid; gap: 20px; align-items: start; }
+.legal-body article { max-width: none; margin: 0; min-width: 0; }
+.legal article > h2:first-child { margin-top: 0; }
+.legal h2 { scroll-margin-top: 88px; padding-top: 4px; }
+.toc { background: var(--white); border-radius: 20px; padding: 14px 18px; }
+.toc summary { cursor: pointer; font-weight: 800; color: var(--green); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.toc ol { list-style: none; margin: 12px 0 4px; padding: 0; display: grid; gap: 2px; }
+.toc a { display: block; padding: 6px 10px; border-radius: 10px; text-decoration: none; color: var(--text); font-size: 14.5px; font-weight: 600; }
+.toc a:hover { background: var(--tint); color: var(--green); }
+@media (min-width: 960px) {
+  .legal-hero { padding: 72px 0 48px; }
+  .legal-body { grid-template-columns: 260px minmax(0, 1fr); gap: 32px; }
+  .toc { position: sticky; top: 84px; }
+}
+
+.legal .legal-summary p { color: rgba(255, 255, 255, 0.9); }

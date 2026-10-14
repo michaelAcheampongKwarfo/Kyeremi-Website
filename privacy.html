@@ -11,32 +11,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20261006">
+  <link rel="stylesheet" href="assets/styles.css?v=20261014">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="./" aria-label="Kyeremi home"><svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1b4332"/><g transform="translate(256 256) scale(1.1) translate(-262 -240)"><path d="M297.7 133.7 A44 44 0 1 0 264 206 L266 206 A78 78 0 1 0 325.8 334.1" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="336" cy="262" r="30" fill="#d4a853"/></g></svg>Kyeremi</a>
-      <nav aria-label="Main"><a class="btn btn-small" href="./#join">Join the waitlist</a></nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="nav" aria-label="Main">
+        <a href="./#how">How it works</a>
+        <a href="./#features">Features</a>
+        <a href="./#privacy">Privacy</a>
+        <a href="./#faq">FAQ</a>
+        <a class="btn btn-small" href="./#join">Join the waitlist</a>
+      </nav>
     </div>
   </header>
 
   <main id="main" class="legal">
-    <div class="container">
-      <article>
+    <section class="legal-hero">
+      <div class="container">
+        <span class="label">Privacy</span>
         <h1>Privacy Policy</h1>
         <p class="updated">Last updated: <span>9 October 2026</span></p>
+        <div class="legal-summary"><p><strong>The short version.</strong> Kyeremi never holds or moves your money and never asks for your MoMo PIN or bank password. We collect only what Kyeremi needs to work, we never sell your data, and you can delete your account and everything with it at any time.</p></div>
+      </div>
+    </section>
+    <div class="container legal-body">
+      <details class="toc" open>
+        <summary>On this page</summary>
+        <ol>
+          <li><a href="#who-we-are">Who we are</a></li>
+          <li><a href="#what-we-collect">What we collect</a></li>
+          <li><a href="#where-your-money-records-are-kept-and-why">Where your money records are kept, and why</a></li>
+          <li><a href="#app-lock">App lock</a></li>
+          <li><a href="#automatic-sms-capture-android-optional">Automatic SMS capture (Android, optional)</a></li>
+          <li><a href="#how-we-use-your-information">How we use your information</a></li>
+          <li><a href="#who-we-share-it-with">Who we share it with</a></li>
+          <li><a href="#how-we-protect-it">How we protect it</a></li>
+          <li><a href="#how-long-we-keep-it">How long we keep it</a></li>
+          <li><a href="#your-rights">Your rights</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes-to-this-policy">Changes to this policy</a></li>
+        </ol>
+      </details>
+      <article>
 
-        <div class="callout">
-          <p><strong>The short version.</strong> Kyeremi never holds or moves your money and never asks for your MoMo PIN or bank password. We collect only what Kyeremi needs to work, we never sell your data, and you can delete your account and everything with it at any time.</p>
-        </div>
-
-        <h2>Who we are</h2>
+        <h2 id="who-we-are">Who we are</h2>
         <p>Kyeremi is a personal finance app run by <span data-config="operator">Kwarfo Michael Acheampong</span>, an individual in Ghana who is responsible for your information as the data controller ("Kyeremi", "we", "us"). This policy explains what information the Kyeremi app and this website collect, why, and the choices you have. It is written to meet Ghana's Data Protection Act, 2012 (Act 843).</p>
         <p>Questions or requests: <a data-config-mailto href="#"><span data-config="supportEmail">our support email</span></a>.</p>
 
-        <h2>What we collect</h2>
+        <h2 id="what-we-collect">What we collect</h2>
         <h3>When you create an account</h3>
         <ul>
           <li><strong>Your name</strong> (first and last).</li>
@@ -50,7 +78,7 @@
           <li>Transactions you log: amount, category, account, date and any note you add.</li>
           <li>Bills, your payday schedule, savings goals and contributions, and your safety buffer.</li>
         </ul>
-        <h2>Where your money records are kept, and why</h2>
+        <h2 id="where-your-money-records-are-kept-and-why">Where your money records are kept, and why</h2>
         <p>Your accounts, balances, transactions, bills, goals and safety buffer are kept <strong>on your phone first</strong>, in Kyeremi's private app storage, with a <strong>backup copy</strong> on our servers while you're signed in.</p>
         <ul>
           <li><strong>On your phone:</strong> every screen reads from your phone, so Kyeremi works fully without internet or data bundles. Android keeps each app's storage separate, so other apps can't read Kyeremi's data, and phones running modern Android encrypt this storage.</li>
@@ -69,7 +97,7 @@
           <p><strong>New or lost phone?</strong> Install Kyeremi and sign in with the same account; your records are restored automatically. Changes made while offline are backed up when you reconnect. If you sign out before they've been backed up, Kyeremi warns you first.</p>
         </div>
 
-        <h2>App lock</h2>
+        <h2 id="app-lock">App lock</h2>
         <p>You can turn on App lock in Settings → Security. Kyeremi then asks for your <strong>phone's own fingerprint, face unlock or passcode</strong> every time it opens, and again if you've been away for more than a minute. Kyeremi never sees or stores your fingerprint, face or passcode: your phone checks them and only tells Kyeremi whether the check passed.</p>
 
         <h3>Settings that stay on your phone</h3>
@@ -85,7 +113,7 @@
           <li>Your text messages. Optional SMS capture (below) reads money messages on your phone; the messages themselves are never sent to us.</li>
         </ul>
 
-        <h2>Automatic SMS capture (Android, optional)</h2>
+        <h2 id="automatic-sms-capture-android-optional">Automatic SMS capture (Android, optional)</h2>
         <p>On Android you can let Kyeremi log your MoMo and bank transactions from their text messages, in Settings → Auto-capture. It is <strong>off by default</strong>, and Kyeremi explains it before Android asks for the "receive SMS" permission.</p>
         <ul>
           <li><strong>New messages only.</strong> Kyeremi receives SMS as they arrive. It does not open your inbox or read older messages.</li>
@@ -98,7 +126,7 @@
         </ul>
         <p>You can also share or paste a single money SMS into Kyeremi yourself, on any phone. It is read the same way, on your phone.</p>
 
-        <h2>How we use your information</h2>
+        <h2 id="how-we-use-your-information">How we use your information</h2>
         <ul>
           <li>To create and secure your account and sign you in.</li>
           <li>To show your Safe-to-Spend, bills, goals and insights. These are worked out from what you enter.</li>
@@ -107,7 +135,7 @@
         </ul>
         <p>We do not sell your information, show you ads, or use it for anyone else's marketing.</p>
 
-        <h2>Who we share it with</h2>
+        <h2 id="who-we-share-it-with">Who we share it with</h2>
         <p>We use a small number of service providers who process data on our behalf, only to run Kyeremi:</p>
         <ul>
           <li><strong>Supabase</strong>: our account and database provider (sign-in, your profile, your backup and the waitlist).</li>
@@ -117,7 +145,7 @@
         </ul>
         <p>Some of these providers store data on servers outside Ghana. We choose providers that protect data with encryption and access controls. We may also disclose information if Ghanaian law requires it.</p>
 
-        <h2>How we protect it</h2>
+        <h2 id="how-we-protect-it">How we protect it</h2>
         <ul>
           <li>Your money records stay on your phone, in storage other apps can't read.</li>
           <li>Data sent between the app and our servers is encrypted in transit.</li>
@@ -126,10 +154,10 @@
           <li>We collect as little as possible: no full account numbers, no PINs, no location.</li>
         </ul>
 
-        <h2>How long we keep it</h2>
+        <h2 id="how-long-we-keep-it">How long we keep it</h2>
         <p>We keep your account information and backup until you delete your account. Records on your phone stay there until you sign out, delete your account or uninstall the app. Waitlist emails and phone numbers are kept until Kyeremi launches and we have contacted you, or until you ask us to remove yours.</p>
 
-        <h2>Your rights</h2>
+        <h2 id="your-rights">Your rights</h2>
         <p>Under the Data Protection Act, you can ask to see the information we hold about you, have it corrected, or have it deleted, and you can object to how we use it.</p>
         <ul>
           <li><strong>Delete everything:</strong> in the app, go to Profile → Settings → Delete account and data. Can't use the app? See <a href="delete-account.html">Delete my account</a>.</li>
@@ -137,10 +165,10 @@
         </ul>
         <p>If you're unhappy with how we handle your information, you can complain to Ghana's <strong>Data Protection Commission</strong>, the regulator for personal data in Ghana.</p>
 
-        <h2>Children</h2>
+        <h2 id="children">Children</h2>
         <p>Kyeremi is for people aged 18 and over. When you create an account, you confirm that you are 18 or older, and the app is listed for adults in app stores. Because Kyeremi never holds money, we don't ask for ID documents to check age. If you believe someone under 18 has created an account, email us and we will delete it.</p>
 
-        <h2>Changes to this policy</h2>
+        <h2 id="changes-to-this-policy">Changes to this policy</h2>
         <p>If we change this policy, we'll update the date at the top. For important changes, we'll tell you in the app before they take effect.</p>
       </article>
     </div>
@@ -160,7 +188,7 @@
       </nav>
     </div>
   </footer>
-  <script src="assets/config.js?v=20261006"></script>
-  <script src="assets/main.js?v=20261006"></script>
+  <script src="assets/config.js?v=20261014"></script>
+  <script src="assets/main.js?v=20261014"></script>
 </body>
 </html>

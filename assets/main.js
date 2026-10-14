@@ -248,3 +248,9 @@
     }).observe(hero);
   }
 })();
+
+
+// Legal pages: "On this page" starts open on wide screens, closed on phones.
+document.querySelectorAll('details.toc').forEach((d) => {
+  if (window.matchMedia('(max-width: 959px)').matches) d.open = false;
+});
