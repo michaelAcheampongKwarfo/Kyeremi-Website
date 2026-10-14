@@ -215,3 +215,42 @@
     });
   });
 })();
+
+
+// Floating "Join the waitlist" button: visible once the hero form has
+// scrolled away, hidden again while any waitlist form is on screen.
+(() => {
+  const cta = document.querySelector('.float-cta');
+  const forms = document.querySelectorAll('form.waitlist');
+  if (!cta || !forms.length || !('IntersectionObserver' in window)) return;
+  const visible = new Set();
+  let pastHero = false;
+  const update = () => {
+    const show = pastHero && visible.size === 0;
+    cta.classList.toggle('show', show);
+    cta.setAttribute('aria-hidden', show ? 'false' : 'true');
+    cta.tabIndex = show ? 0 : -1;
+  };
+  new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+    update();
+  }).observe(forms[0]);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+    update();
+  });
+  forms.forEach((f, i) => i > 0 && io.observe(f));
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    new IntersectionObserver(([e]) => {
+      pastHero = !e.isIntersecting;
+      update();
+    }).observe(hero);
+  }
+})();
+
+
+// Legal pages: "On this page" starts open on wide screens, closed on phones.
+document.querySelectorAll('details.toc').forEach((d) => {
+  if (window.matchMedia('(max-width: 959px)').matches) d.open = false;
+});

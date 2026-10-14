@@ -11,24 +11,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20261006">
+  <link rel="stylesheet" href="assets/styles.css?v=20261014">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="./" aria-label="Kyeremi home"><svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1b4332"/><g transform="translate(256 256) scale(1.1) translate(-262 -240)"><path d="M297.7 133.7 A44 44 0 1 0 264 206 L266 206 A78 78 0 1 0 325.8 334.1" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="336" cy="262" r="30" fill="#d4a853"/></g></svg>Kyeremi</a>
-      <nav aria-label="Main"><a class="btn btn-small" href="./#join">Join the waitlist</a></nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="nav" aria-label="Main">
+        <a href="./#how">How it works</a>
+        <a href="./#features">Features</a>
+        <a href="./#privacy">Privacy</a>
+        <a href="./#faq">FAQ</a>
+        <a class="btn btn-small" href="./#join">Join the waitlist</a>
+      </nav>
     </div>
   </header>
 
   <main id="main" class="legal">
-    <div class="container">
-      <article>
+    <section class="legal-hero">
+      <div class="container">
+        <span class="label">Your account</span>
         <h1>Delete my Kyeremi account</h1>
         <p class="updated">You can delete your account and everything stored with it at any time.</p>
+      </div>
+    </section>
+    <div class="container legal-body">
+      <details class="toc" open>
+        <summary>On this page</summary>
+        <ol>
+          <li><a href="#the-quickest-way-in-the-app">The quickest way: in the app</a></li>
+          <li><a href="#can-t-open-the-app">Can't open the app?</a></li>
+          <li><a href="#what-gets-deleted">What gets deleted</a></li>
+          <li><a href="#what-we-keep">What we keep</a></li>
+        </ol>
+      </details>
+      <article>
 
-        <h2>The quickest way: in the app</h2>
+        <h2 id="the-quickest-way-in-the-app">The quickest way: in the app</h2>
         <ol class="steps-list">
           <li>Open Kyeremi and tap your picture in the top-right corner to open <strong>Profile</strong>.</li>
           <li>Tap <strong>Settings</strong>, then scroll to <strong>Account</strong>.</li>
@@ -36,7 +59,7 @@
         </ol>
         <p>Your account is deleted straight away.</p>
 
-        <h2>Can't open the app?</h2>
+        <h2 id="can-t-open-the-app">Can't open the app?</h2>
         <p>If you've uninstalled Kyeremi or lost your phone, email us and we'll delete your account for you:</p>
         <ol class="steps-list">
           <li>Email <a data-config-mailto data-subject="Delete my Kyeremi account" href="#"><span data-config="supportEmail">our support email</span></a> with the subject <strong>"Delete my Kyeremi account"</strong>.</li>
@@ -44,7 +67,7 @@
           <li>We'll confirm by email and delete the account within <strong>30 days</strong> (usually much sooner).</li>
         </ol>
 
-        <h2>What gets deleted</h2>
+        <h2 id="what-gets-deleted">What gets deleted</h2>
         <ul>
           <li>Your account and sign-in details (phone number, email, linked Google account).</li>
           <li>Your profile: name and phone number.</li>
@@ -52,7 +75,7 @@
         </ul>
         <p>Records kept only on your phone are removed when you delete your account in the app, sign out or uninstall Kyeremi.</p>
 
-        <h2>What we keep</h2>
+        <h2 id="what-we-keep">What we keep</h2>
         <p>Nothing from your account. If you emailed us, we may keep that email conversation for up to 12 months as a record of your request. If you're also on the waitlist, ask us in the same email and we'll remove that too.</p>
 
         <div class="callout">
@@ -76,7 +99,7 @@
       </nav>
     </div>
   </footer>
-  <script src="assets/config.js?v=20261006"></script>
-  <script src="assets/main.js?v=20261006"></script>
+  <script src="assets/config.js?v=20261014"></script>
+  <script src="assets/main.js?v=20261014"></script>
 </body>
 </html>

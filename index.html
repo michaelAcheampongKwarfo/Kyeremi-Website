@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20261006">
+  <link rel="stylesheet" href="assets/styles.css?v=20261014">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -111,7 +111,6 @@
         <div class="section-head promo-head">
           <span class="eyebrow">30-second demo</span>
           <h2 id="watch-title" style="margin-top:16px">See your number change as you spend.</h2>
-          <p>Log a Bolt ride or lunch and your Safe-to-Spend updates instantly. Overspend one day and Kyeremi spreads it across the days to payday, so you always know where you stand.</p>
         </div>
         <div class="promo">
           <!-- Loads nothing until someone presses play (preload="none"). -->
@@ -120,226 +119,161 @@
             <a href="assets/kyeremi-promo.mp4">Watch the Kyeremi demo</a>
           </video>
         </div>
-        <p class="promo-cta"><a class="btn" href="#join">Join the waitlist</a></p>
       </div>
     </section>
 
-    <section class="trust" aria-labelledby="trust-title">
+    <section id="how" class="how" aria-labelledby="how-title">
       <div class="container">
-        <div class="section-head">
-          <h2 id="trust-title">A mirror, not a wallet.</h2>
-          <p>Your money stays exactly where it is: in your MoMo, your bank and your pocket. Kyeremi only shows you what you have and helps you decide what to do with it.</p>
+        <div class="section-head center">
+          <h2 id="how-title">How it works</h2>
+          <p>Set up in a few minutes. No bank login, no linking.</p>
         </div>
-        <div class="trust-grid">
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
-            <h3>Never moves your money</h3>
-            <p>Kyeremi can't send, receive or hold money. It isn't a bank or a MoMo wallet.</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
-            <h3>Never asks for your PIN</h3>
-            <p>No MoMo PIN, no bank password, ever. If anyone asks in Kyeremi's name, it isn't us.</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></div>
-            <h3>Your data, your call</h3>
-            <p>We never sell your data. Delete your account and everything with it, any time, from the app.</p>
-          </div>
-        </div>
+        <ol class="how-steps">
+          <li><h3>Add your MoMo, bank and cash</h3><p>Enter what's in each one right now.</p></li>
+          <li><h3>Tell Kyeremi about payday and bills</h3><p>Salary, weekly pay or daily sales, plus rent and fees you've promised.</p></li>
+          <li><h3>Check one number each day</h3><p>Kyeremi does the maths. You just spend with confidence.</p></li>
+        </ol>
       </div>
     </section>
 
-    <section id="how" aria-labelledby="how-title">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="how-title">Set up in a few minutes.</h2>
-          <p>No bank login, no linking. You tell Kyeremi what you have; Kyeremi does the maths every day.</p>
+    <section id="features" class="fb" aria-labelledby="fb1">
+      <div class="container fb-grid">
+        <div class="fb-text">
+          <span class="label">Safe-to-Spend</span>
+          <h2 id="fb1">One number for today.</h2>
+          <p>What you have, minus bills and savings, spread over the days to payday. Spend less today and tomorrow goes up.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <h3>Add your MoMo, bank and cash</h3>
-            <p>Enter what's in each one right now. Two MoMo wallets? Add both.</p>
-          </div>
-          <div class="step">
-            <h3>Tell Kyeremi about payday and bills</h3>
-            <p>Monthly salary, weekly pay or daily sales, plus rent, fees and data bundles you've already promised.</p>
-          </div>
-          <div class="step">
-            <h3>Check one number each day</h3>
-            <p>Log what you spend in seconds. Your Safe-to-Spend updates straight away.</p>
+        <div class="fb-visual" role="img" aria-label="Safe to spend today: GH₵ 80 left of GH₵ 200, and GH₵ 1,880 safe until payday on 9 October.">
+          <div class="vcard sts-card" aria-hidden="true">
+            <small>Safe to spend today</small>
+            <div class="sts-amount">GH₵ 80 <span>left</span></div>
+            <div class="sts-bar"><i></i></div>
+            <div class="sts-meta">GH₵ 80 of today's GH₵ 200 left</div>
+            <div class="sts-meta sts-until">GH₵ 1,880 safe until payday · 9 Oct</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" aria-labelledby="features-title" style="padding-top:0">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="features-title">Everything points to one clear answer.</h2>
-          <p>Most expense apps show you where your money went. Kyeremi helps you decide what to do with the money you still have.</p>
+    <section class="fb fb-alt" aria-labelledby="fb2">
+      <div class="container fb-grid fb-reverse">
+        <div class="fb-text">
+          <span class="label">Auto-capture · Android</span>
+          <h2 id="fb2">MoMo texts log themselves.</h2>
+          <p>MTN MoMo, Telecel Cash and bank texts turn into entries you just confirm. Read on your phone, never uploaded.</p>
         </div>
-        <div class="features">
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <h3>Safe-to-Spend, today</h3>
-            <p>What you have, minus bills and savings, spread over the days until payday. Spend less today and tomorrow goes up.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div>
-            <h3>Bills set aside first</h3>
-            <p>Rent, school fees and susu are held back before you see a cedi, so they're never spent by accident.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4h11l-1 4 6 1-2 6H6"/></svg></div>
-            <h3>Goals you can see grow</h3>
-            <p>Save for a laptop, fees or an emergency fund, and watch your progress without moving a pesewa.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
-            <h3>Cash in five seconds</h3>
-            <p>Long-press the Kyeremi icon to log a cash expense, or answer the evening check-in. No more forgotten trotro fares.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
-            <h3>One tip at a time</h3>
-            <p>Weekly insights that compare like with like, and one clear next step, not a pile of charts.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0114 0M8.5 16a5 5 0 017 0"/><circle cx="12" cy="19.5" r="1"/></svg></div>
-            <h3>Works offline</h3>
-            <p>No data? No problem. Everything works on your phone and is kept there first.</p>
+        <div class="fb-visual" role="img" aria-label="An MTN MoMo text message becomes a GH₵ 18 entry waiting to be confirmed.">
+          <div class="sms-flow" aria-hidden="true">
+            <div class="sms"><span class="sms-from">MobileMoney</span><p>Payment made for GHS 18.00 to KOFI BOATENG. Current Balance: GHS 266.03.</p></div>
+            <div class="sms-arrow">Read on your phone</div>
+            <div class="vcard review">
+              <div><b>Kofi Boateng</b><small>MTN MoMo · Needs review</small></div>
+              <div class="review-right"><b>−GH₵ 18.00</b><span class="pill">Confirm</span></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="planning" aria-labelledby="planning-title" style="padding-top:0">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="planning-title">Tracking takes seconds. Planning is done for you.</h2>
-          <p>Most budgeting apps make you do the work: categories, spreadsheets, limits. With Kyeremi you log what you spend, and the planning happens on its own.</p>
+    <section class="fb" aria-labelledby="fb3">
+      <div class="container fb-grid">
+        <div class="fb-text">
+          <span class="label">Bills</span>
+          <h2 id="fb3">Rent is set aside before you see a cedi.</h2>
+          <p>Bills due before payday are held back first, and Kyeremi reminds you the evening before they're due.</p>
         </div>
-        <div class="split">
-          <div class="panel">
-            <span class="panel-tag">What you do</span>
-            <h3>Log it and move on</h3>
-            <ul class="check-list">
-              <li>Amount, category, save: about five seconds per expense</li>
-              <li>Quick amounts like +₵5 and +₵20 for trotro, food and airtime</li>
-              <li>Long-press the Kyeremi icon to log cash without opening the app</li>
-              <li>An evening cash check-in, and if you like, your Safe-to-Spend first thing in the morning</li>
-              <li>On Android, MoMo and bank SMS can be logged for you; just confirm them</li>
-              <li>Move money between your own accounts without it counting as spending</li>
-              <li>Pay a bill with one tap when it's done</li>
-            </ul>
-          </div>
-          <div class="panel panel-dark">
-            <span class="panel-tag">What Kyeremi does</span>
-            <h3>The planning, every day</h3>
-            <ul class="check-list">
-              <li>Holds back bills due before payday and money for your goals</li>
-              <li>Spreads the rest over the days until money comes in</li>
-              <li>Takes each expense straight off today's figure</li>
-              <li>Underspend and tomorrow goes up; overspend and it adjusts quietly</li>
-              <li>Spots your biggest change each week and suggests one next step</li>
-            </ul>
+        <div class="fb-visual" role="img" aria-label="Bills before payday: rent GH₵ 800 set aside, school fees GH₵ 450, data bundle GH₵ 50.">
+          <div class="vcard list-card" aria-hidden="true">
+            <h4>Bills before payday</h4>
+            <div class="list-row"><span><b>Rent</b><small>Due Fri</small></span><span class="amt">GH₵ 800 <em class="tag">Set aside</em></span></div>
+            <div class="list-row"><span><b>School fees</b><small>Due 20 Oct</small></span><span class="amt">GH₵ 450 <em class="tag">Set aside</em></span></div>
+            <div class="list-row"><span><b>Data bundle</b><small>Due 22 Oct</small></span><span class="amt">GH₵ 50 <em class="tag">Set aside</em></span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="accuracy" aria-labelledby="accuracy-title" style="padding-top:0">
-      <div class="container">
-        <div class="split split-center">
-          <div>
-            <h2 id="accuracy-title">Honest numbers, never inflated.</h2>
-            <p class="lead" style="margin-top:14px">Safe-to-Spend is exact arithmetic on what you tell Kyeremi. Enter real balances and log what you spend, and the number you see is the number you can actually use.</p>
-            <ul class="check-list">
-              <li><strong>Money you're expecting isn't counted</strong> until it arrives, so a late salary never makes today look richer than it is.</li>
-              <li><strong>Bills and savings are taken out first</strong>, so they never show up as spendable.</li>
-              <li><strong>A safety buffer</strong> keeps an amount you choose permanently out of view.</li>
-              <li><strong>Old savings are handled honestly.</strong> Money saved before you joined isn't counted twice.</li>
-            </ul>
-          </div>
-          <div class="panel">
-            <span class="panel-tag">Keep it accurate</span>
-            <h3>Three habits</h3>
-            <ol class="steps-list">
-              <li>Enter balances as they really are, checked in your MoMo menu (MTN MoMo, Telecel Cash or AT Money) or banking app. Don't round up.</li>
-              <li>Log cash the same day. The evening check-in helps.</li>
-              <li>If a balance drifts, correct it in Profile. Your history stays as it is.</li>
-            </ol>
+    <section class="fb fb-alt" aria-labelledby="fb4">
+      <div class="container fb-grid fb-reverse">
+        <div class="fb-text">
+          <span class="label">Cash</span>
+          <h2 id="fb4">Cash in five seconds.</h2>
+          <p>Long-press the Kyeremi icon, tap an amount, save. No more forgotten trotro fares.</p>
+        </div>
+        <div class="fb-visual" role="img" aria-label="Adding a GH₵ 25 cash expense with quick amount buttons, then 'Expense saved'.">
+          <div class="vcard quick" aria-hidden="true">
+            <small>Add expense · Cash</small>
+            <div class="quick-amt">GH₵ 25</div>
+            <div class="quick-chips"><span>+₵5</span><span class="on">+₵20</span><span>+₵10</span><span>+₵50</span></div>
+            <div class="quick-cat">Food &amp; Dining</div>
+            <div class="toast">Expense saved · GH₵ 25.00 <b>Undo</b></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="fb" aria-labelledby="fb5">
+      <div class="container fb-grid">
+        <div class="fb-text">
+          <span class="label">Nudges</span>
+          <h2 id="fb5">Never miss what matters.</h2>
+          <p>A morning number, an evening check-in and bill reminders, at times you choose.</p>
+        </div>
+        <div class="fb-visual" role="img" aria-label="Three Kyeremi notifications: GH₵ 80 safe to spend today; a cash check-in; rent due tomorrow, already set aside.">
+          <div class="ntf-stack" aria-hidden="true">
+            <div class="ntf"><svg class="ntf-icon" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1b4332"/><g transform="translate(256 256) scale(1.1) translate(-262 -240)"><path d="M297.7 133.7 A44 44 0 1 0 264 206 L266 206 A78 78 0 1 0 325.8 334.1" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="336" cy="262" r="30" fill="#d4a853"/></g></svg><div><span class="ntf-app">Kyeremi · 6:00 AM</span><b>☕ GH₵ 80 safe to spend today</b><p>Good morning! Let's make it a great, disciplined day.</p></div></div>
+            <div class="ntf"><svg class="ntf-icon" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1b4332"/><g transform="translate(256 256) scale(1.1) translate(-262 -240)"><path d="M297.7 133.7 A44 44 0 1 0 264 206 L266 206 A78 78 0 1 0 325.8 334.1" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="336" cy="262" r="30" fill="#d4a853"/></g></svg><div><span class="ntf-app">Kyeremi · 8:00 PM</span><b>🪙 Cash check-in</b><p>Did you spend any cash or MoMo today? Log it in seconds.</p></div></div>
+            <div class="ntf"><svg class="ntf-icon" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1b4332"/><g transform="translate(256 256) scale(1.1) translate(-262 -240)"><path d="M297.7 133.7 A44 44 0 1 0 264 206 L266 206 A78 78 0 1 0 325.8 334.1" fill="none" stroke="#f8f6f0" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="336" cy="262" r="30" fill="#d4a853"/></g></svg><div><span class="ntf-app">Kyeremi · 8:00 PM</span><b>Rent is due tomorrow</b><p>GH₵ 800. It's already set aside.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="also" aria-label="Also in Kyeremi">
+      <div class="container">
+        <ul class="also-list">
+          <li>Goals you can see grow</li>
+          <li>One tip a week</li>
+          <li>Moves between your own accounts</li>
+          <li>Works offline</li>
+          <li>App lock with fingerprint or face</li>
+        </ul>
       </div>
     </section>
 
     <section id="privacy" class="trust" aria-labelledby="privacy-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="privacy-title">Private by design.</h2>
-          <p>Your money records live on your phone first, with a private backup that only you can restore.</p>
+          <span class="label label-light">Privacy</span>
+          <h2 id="privacy-title">A mirror, not a wallet.</h2>
+          <p>Your money stays in your MoMo, your bank and your pocket. Kyeremi only shows you what you have.</p>
         </div>
-        <div class="trust-grid">
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-            <h3>Stored on your phone</h3>
-            <p>Your accounts, transactions, bills and goals are saved in Kyeremi's private storage on your phone. Other apps can't read it, and it works with no internet at all.</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11c0 3-1 6-3 8M8 6a6 6 0 0110 4c0 4-1 7-3 10M5 9a8 8 0 012-4M16 21c1-2 2-5 2-8"/></svg></div>
-            <h3>App lock with your fingerprint or face</h3>
-            <p>Turn on App lock and Kyeremi opens only with your phone's own fingerprint, face unlock or passcode. Kyeremi never stores a PIN of its own.</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 01-.5-8A6 6 0 0118 9a4 4 0 01-1 9z"/><path d="M12 12v6M9.5 14.5L12 12l2.5 2.5"/></svg></div>
-            <h3>Backup, only what's needed</h3>
-            <p>Lose your phone, not your records. Sign in on a new phone and your accounts, transactions, bills and goals come back, private to your account. Never full account numbers, never your PIN.</p>
-          </div>
+        <div class="trust-grid trust-grid-4">
+          <div class="trust-item"><h3>Never moves your money</h3><p>It can't send, receive or hold money. It isn't a bank or a wallet.</p></div>
+          <div class="trust-item"><h3>Never asks for your PIN</h3><p>No MoMo PIN, no bank password, ever. If anyone asks in Kyeremi's name, it isn't us.</p></div>
+          <div class="trust-item"><h3>Kept on your phone</h3><p>Your records live on your phone first and work with no internet.</p></div>
+          <div class="trust-item"><h3>Your data, your call</h3><p>Never sold. Delete your account and everything with it, any time.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="android" aria-labelledby="android-title">
-      <div class="container">
-        <div class="split split-center">
-          <div>
-            <span class="eyebrow">Android first, iPhone next</span>
-            <h2 id="android-title" style="margin-top:16px">Why Android first?</h2>
-            <p class="lead" style="margin-top:14px">Most phones in Ghana run Android, so starting there means Kyeremi reaches the most people sooner, and we can make it fast on everyday phones, not just flagships.</p>
-          </div>
-          <div class="panel">
-            <ul class="check-list">
-              <li><strong>Built for real phones:</strong> works offline, light on data and storage.</li>
-              <li><strong>Automatic MoMo logging on Android:</strong> with your permission, Kyeremi logs MoMo and bank transactions from their text messages (MTN MoMo, Telecel Cash and Fidelity Bank first, more to follow). They're read on your phone and wait for you to confirm. iPhone doesn't let apps read texts, so there you'll paste a message instead.</li>
-              <li><strong>iPhone is planned.</strong> Kyeremi is built so the iPhone version can follow, with quick logging, App lock with Face ID, and Sign in with Apple. Join the waitlist to hear when it's ready.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="ghana-title" style="padding-top:0">
+    <section id="android" aria-labelledby="ghana-title">
       <div class="container ghana">
         <div>
+          <span class="label">Built for Ghana</span>
           <h2 id="ghana-title">Made for how Ghana gets paid.</h2>
           <p class="lead" style="margin-top:14px">Salary at month end, weekly wages or daily sales from the stall: Kyeremi plans around how you actually earn.</p>
-          <ul class="check-list">
-            <li>MoMo, bank and cash side by side, in cedis</li>
-            <li>Daily earners plan a week at a time, so a good day isn't spent in one go</li>
-            <li>Susu, rent and data bundles set aside before payday</li>
-            <li>Built for everyday Android phones and patchy data</li>
-          </ul>
         </div>
-        <div class="quote-card">
-          <small>An example day</small>
-          <p style="margin-top:8px">Ama is cleared to spend GH₵ 200 today. She buys lunch for GH₵ 120, and Kyeremi shows GH₵ 80 left. Tomorrow's figure barely moves, because the rest of the week was already planned.</p>
-        </div>
+        <ul class="check-list">
+          <li>MoMo, bank and cash side by side, in cedis</li>
+          <li>Daily earners plan a week at a time, so a good day isn't spent in one go</li>
+          <li>Built for everyday Android phones and patchy data</li>
+          <li><strong>Android first,</strong> because most phones in Ghana run it. iPhone is next: join the waitlist and tap iPhone</li>
+        </ul>
       </div>
     </section>
 
-    <section id="faq" aria-labelledby="faq-title" style="padding-top:0">
+    <section id="faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-head"><h2 id="faq-title">Questions</h2></div>
         <div class="faq">
@@ -363,8 +297,8 @@
           <details>
             <summary>I have an iPhone. Is Kyeremi for me?</summary>
             <p><strong>Yes.</strong> Kyeremi is coming to iPhone too. We're starting on Android because most phones in Ghana run it, and it lets us make Kyeremi fast on everyday phones (<a href="#android">more on why</a>).</p>
-            <p>The iPhone version is planned with everything that matters: Safe-to-Spend, bills, goals, insights, quick cash logging, App lock with Face ID and Sign in with Apple. The one thing iPhone won't have is automatic logging from text messages, because Apple doesn't let apps read them. You'll still be able to copy a MoMo message and paste it into Kyeremi.</p>
-            <p>Join the waitlist and tap <strong>iPhone</strong> under "Your phone". The more iPhone users sign up, the sooner it comes, and we'll let you know the moment it's ready.</p>
+            <p>The iPhone version is planned with everything that matters: Safe-to-Spend, bills, goals, insights, quick cash logging, App lock with Face ID and Sign in with Apple. Apple doesn't let apps read text messages, so on iPhone a two-minute Shortcuts setup will pass MoMo messages to Kyeremi instead, and you can always copy and paste one.</p>
+            <p>Join the waitlist and tap <strong>iPhone</strong> under "Your phone". The more iPhone users sign up, the sooner it comes.</p>
           </details>
           <details>
             <summary>I don't earn a monthly salary. Will it work for me?</summary>
@@ -378,6 +312,10 @@
             <summary>Will Kyeremi read my text messages?</summary>
             <p><strong>Only if you turn it on.</strong> On Android, automatic logging is off until you switch it on in Settings and allow it. Kyeremi then reads only new messages from MoMo and bank senders (MTN MoMo, Telecel Cash and Fidelity Bank for now), on your phone. It never opens your inbox or old messages, every other text is ignored, and the messages themselves are never uploaded. Each one waits for you to confirm, and you can turn it off at any time (<a href="privacy.html">privacy policy</a>).</p>
             <p>You can also share or paste a single MoMo message into Kyeremi yourself.</p>
+          </details>
+          <details>
+            <summary>How accurate is Safe-to-Spend?</summary>
+            <p><strong>As accurate as what you tell it.</strong> It's exact arithmetic: money you're expecting isn't counted until it arrives, bills and savings come out first, and an optional safety buffer keeps an amount you choose out of view. Enter real balances (check your MoMo menu or banking app), log cash the same day, and correct a balance if it drifts. Safe-to-Spend is an estimate to help you plan: you're responsible for what you enter and for your spending decisions (<a href="terms.html">terms</a>).</p>
           </details>
           <details>
             <summary>What happens to my data?</summary>
@@ -429,6 +367,8 @@
     </section>
   </main>
 
+  <a class="float-cta" href="#join" aria-hidden="true" tabindex="-1">Join the waitlist</a>
+
   <footer class="site-footer">
     <div class="container">
       <div>
@@ -445,6 +385,6 @@
   </footer>
 
   <script src="assets/config.js?v=20261006"></script>
-  <script src="assets/main.js?v=20261006"></script>
+  <script src="assets/main.js?v=20261014"></script>
 </body>
 </html>
