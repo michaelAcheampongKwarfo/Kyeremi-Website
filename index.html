@@ -132,12 +132,25 @@
             <label class="try-buffer">Keep back for safety <small>Optional</small><span class="try-input"><span aria-hidden="true">GH₵</span><input type="text" inputmode="decimal" name="buffer" placeholder="0" autocomplete="off"></span></label>
           </form>
           <div class="try-result">
-            <div class="vcard sts-card">
-              <small>Safe to spend today</small>
-              <div class="sts-amount" data-try="amount">GH₵ –</div>
-              <div class="sts-meta sts-until" data-try="how" role="status" aria-live="polite">Add your money and your next payday.</div>
+            <div class="phone try-phone">
+              <div class="phone-screen">
+                <div class="vcard sts-card">
+                  <small>Safe to spend today</small>
+                  <div class="sts-amount" data-try="amount">GH₵ –</div>
+                  <div class="sts-meta sts-until" data-try="how" role="status" aria-live="polite">Add your money and your next payday.</div>
+                </div>
+                <div class="sms try-sms" data-try="sms" hidden>
+                  <span class="sms-from">MobileMoney <em>Example</em></span>
+                  <p>Payment made for GHS <span data-try="sms-amount"></span> to KOFI BOATENG.</p>
+                </div>
+                <div class="vcard review try-review" data-try="review" hidden>
+                  <div><b>Kofi Boateng</b><small data-try="review-state">MoMo · Needs review</small></div>
+                  <div class="review-right"><b data-try="review-amount"></b><button class="pill try-confirm" type="button" data-try="confirm">Confirm</button></div>
+                </div>
+              </div>
             </div>
-            <p class="try-note">An estimate from what you typed, rounded down. Kyeremi keeps this up to date every day, as you spend.</p>
+            <button class="btn try-sim" type="button" data-try="sim" hidden>Pretend a MoMo text arrives</button>
+            <p class="try-note" data-try="note">An estimate from what you typed, rounded down. Kyeremi keeps this up to date every day, as you spend.</p>
             <a class="btn try-cta" href="#join">Get this every morning</a>
           </div>
         </div>

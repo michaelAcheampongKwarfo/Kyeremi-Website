@@ -244,10 +244,64 @@
     return y ? new Date(y, m - 1, d) : null;
   };
 
-  const show = (figure, line) => {
+  // "Pretend a MoMo text arrives": one scripted example on the visitor's own
+  // number. A captured debit counts while it waits, as in the app, so it
+  // comes straight off today. The amount never passes today's figure.
+  const part = (name) => document.querySelector(`[data-try="${name}"]`);
+  const sim = part('sim');
+  const sms = part('sms');
+  const review = part('review');
+  const confirm = part('confirm');
+  const note = part('note');
+  const noteText = note.textContent;
+  const simLabel = sim.textContent;
+  const pause = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 900;
+  let daily = 0;
+  let ran = false;
+  let timer = null;
+
+  const resetSim = () => {
+    clearTimeout(timer);
+    ran = false;
+    sms.hidden = true;
+    review.hidden = true;
+    confirm.hidden = false;
+    part('review-state').textContent = 'MoMo · Needs review';
+    note.textContent = noteText;
+    sim.textContent = simLabel;
+    sim.disabled = false;
+    sim.hidden = daily < 2;
+  };
+
+  const show = (figure, line, whole = 0) => {
+    daily = whole;
+    resetSim();
     amount.textContent = figure;
     how.textContent = line;
   };
+
+  sim.addEventListener('click', () => {
+    if (ran) return update();
+    ran = true;
+    sim.disabled = true;
+    const spend = Math.min(45, Math.max(1, Math.floor(daily * 0.6)));
+    part('sms-amount').textContent = `${spend}.00`;
+    part('review-amount').textContent = `−GH₵ ${spend}.00`;
+    sms.hidden = false;
+    timer = setTimeout(() => {
+      review.hidden = false;
+      amount.innerHTML = `GH₵ ${(daily - spend).toLocaleString('en-GB')} <span>left</span>`;
+      how.textContent = `GH₵ ${spend} off today's GH₵ ${daily.toLocaleString('en-GB')}. It counts while it waits for you.`;
+      note.textContent = 'Just an example. In the app on Android, real MoMo and bank texts log themselves, and your messages never leave your phone.';
+      sim.textContent = 'Try again';
+      sim.disabled = false;
+    }, pause);
+  });
+
+  confirm.addEventListener('click', () => {
+    confirm.hidden = true;
+    part('review-state').textContent = 'MoMo · Confirmed';
+  });
 
   const update = () => {
     const money = moneyFields.reduce((sum, name) => sum + pesewas(name), 0);
@@ -275,6 +329,7 @@
     show(
       cedis(left / days),
       `${cedis(money)}${taken}, ${days === 1 ? 'for today' : `over ${days} days, counting today and payday`}.`,
+      Math.floor(left / days / 100),
     );
   };
 

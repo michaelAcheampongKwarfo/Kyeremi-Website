@@ -447,7 +447,7 @@ section { padding: 64px 0; }
 
 /* "What's safe for you today?": the demo under the hero. */
 .try { background: var(--white); }
-.try-grid { display: grid; gap: 28px; max-width: 880px; margin: 0 auto; align-items: center; }
+.try-grid { display: grid; gap: 28px; max-width: 880px; margin: 0 auto; align-items: start; }
 .try-form { display: grid; gap: 16px; min-width: 0; }
 .try-money { border: 0; margin: 0; padding: 0; min-width: 0; }
 .try-money legend { padding: 0; margin-bottom: 8px; font-weight: 700; color: var(--green); }
@@ -464,10 +464,28 @@ section { padding: 64px 0; }
 .try-input input { flex: 1; width: 100%; min-width: 0; border: 0; padding: 0; background: none; font: inherit; font-size: 16px; color: var(--text); }
 .try-input input:focus { outline: none; }
 .try-result { display: grid; gap: 14px; justify-items: center; min-width: 0; }
-.try-result .vcard { width: min(380px, 100%); }
+/* A small phone around the result only: the form stays full size. */
+.try-phone { width: min(340px, 100%); padding: 10px; border-radius: 38px; }
+.try-phone .phone-screen { display: grid; gap: 10px; padding: 12px; border-radius: 28px; }
+.try-result .vcard { width: 100%; }
 .try-result .sts-amount { overflow-wrap: anywhere; }
+.try-result [hidden] { display: none; }
+.try-sms { animation: try-in 0.3s ease-out; }
+.try-review { animation: try-in 0.3s ease-out; padding: 14px 16px; box-shadow: none; }
+.try-sms .sms-from em { margin-left: 6px; padding: 1px 7px; border-radius: 99px; background: var(--gold); color: var(--green); font-style: normal; font-size: 11px; }
+.try-review .review-right b { white-space: nowrap; }
+.try-confirm { border: 0; min-height: 28px; font-family: inherit; cursor: pointer; }
+@keyframes try-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .try-sms, .try-review { animation: none; }
+}
 .try-note { margin: 0; max-width: 380px; font-size: 13.5px; text-align: center; color: var(--muted); }
-.try-cta { width: min(380px, 100%); }
+.try-sim, .try-cta { width: min(340px, 100%); }
+.try-sim { background: var(--gold); color: var(--green) !important; }
+.try-sim:hover { background: #c79a45; }
 @media (min-width: 520px) {
   .try-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .try-money .try-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
