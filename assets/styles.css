@@ -274,7 +274,7 @@ section { padding: 64px 0; }
 .promo { max-width: 960px; margin: 0 auto; }
 .promo video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 24px; background: var(--green); box-shadow: var(--shadow); }
 .promo-cta { margin: 28px 0 0; text-align: center; }
-.watch-link { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--green); text-decoration: none; }
+.watch-link { display: inline-block; margin: 14px 20px 0 0; font-weight: 700; color: var(--green); text-decoration: none; }
 .watch-link:hover { text-decoration: underline; }
 
 .split { display: grid; gap: 16px; }
@@ -444,6 +444,37 @@ section { padding: 64px 0; }
 @media (min-width: 900px) { .trust-grid-4 { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 760px) and (max-width: 899px) { .trust-grid-4 { grid-template-columns: repeat(2, 1fr); } }
 .trust-grid-4 .trust-item h3 { font-size: 17px; }
+
+/* "What's safe for you today?": the demo under the hero. */
+.try { background: var(--white); }
+.try-grid { display: grid; gap: 28px; max-width: 880px; margin: 0 auto; align-items: center; }
+.try-form { display: grid; gap: 16px; min-width: 0; }
+.try-money { border: 0; margin: 0; padding: 0; min-width: 0; }
+.try-money legend { padding: 0; margin-bottom: 8px; font-weight: 700; color: var(--green); }
+/* One box per line on phones: three across clips the digits. */
+.try-row { display: grid; gap: 12px; grid-template-columns: 1fr; }
+.try-form label { display: block; min-width: 0; font-size: 14px; font-weight: 600; color: var(--text); }
+.try-buffer small { margin-left: 6px; padding: 2px 8px; border-radius: 99px; background: var(--tint); font-size: 11px; font-weight: 600; color: var(--muted); }
+.try-input {
+  display: flex; align-items: center; gap: 6px; min-height: 48px; margin-top: 6px; padding: 0 12px;
+  border: 1.5px solid var(--line); border-radius: 14px; background: var(--cream);
+  font-size: 14px; font-weight: 600; color: var(--muted);
+}
+.try-input:focus-within { border-color: var(--green-light); box-shadow: 0 0 0 4px var(--tint); }
+.try-input input { flex: 1; width: 100%; min-width: 0; border: 0; padding: 0; background: none; font: inherit; font-size: 16px; color: var(--text); }
+.try-input input:focus { outline: none; }
+.try-result { display: grid; gap: 14px; justify-items: center; min-width: 0; }
+.try-result .vcard { width: min(380px, 100%); }
+.try-result .sts-amount { overflow-wrap: anywhere; }
+.try-note { margin: 0; max-width: 380px; font-size: 13.5px; text-align: center; color: var(--muted); }
+.try-cta { width: min(380px, 100%); }
+@media (min-width: 520px) {
+  .try-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .try-money .try-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 860px) {
+  .try-grid { grid-template-columns: 1.1fr 0.9fr; gap: 48px; }
+}
 
 /* Floating waitlist button: shows after the hero, hides near a form. */
 .float-cta {

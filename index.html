@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20261014">
+  <link rel="stylesheet" href="assets/styles.css?v=20261102">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,6 +26,7 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav class="nav-links" id="nav" aria-label="Main">
+        <a href="#try">Try it</a>
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
@@ -75,6 +76,7 @@
             <p class="form-status" role="status" aria-live="polite"></p>
             <p class="form-note">On iPhone? Join anyway: we'll tell you the moment it's ready. No spam, ever.</p>
           </form>
+          <a class="watch-link" href="#try">Try your number</a>
           <a class="watch-link" href="#watch">▶ Watch Kyeremi in a minute</a>
         </div>
 
@@ -101,6 +103,42 @@
               <div class="mini-row"><span>Waakye · Cash</span><b>−GH₵ 25</b></div>
               <div class="mini-row"><span>Trotro · Cash</span><b>−GH₵ 12</b></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="try" class="try" aria-labelledby="try-title">
+      <div class="container">
+        <div class="section-head center">
+          <span class="label">Try it</span>
+          <h2 id="try-title">What's safe for you today?</h2>
+          <p>Type roughly what you have. It takes 20 seconds, and nothing you type is saved or sent.</p>
+        </div>
+        <div class="try-grid">
+          <form class="try-form" novalidate>
+            <fieldset class="try-money">
+              <legend>Money you have now</legend>
+              <div class="try-row">
+                <label>MoMo<span class="try-input"><span aria-hidden="true">GH₵</span><input type="text" inputmode="decimal" name="momo" placeholder="0" autocomplete="off"></span></label>
+                <label>Bank<span class="try-input"><span aria-hidden="true">GH₵</span><input type="text" inputmode="decimal" name="bank" placeholder="0" autocomplete="off"></span></label>
+                <label>Cash<span class="try-input"><span aria-hidden="true">GH₵</span><input type="text" inputmode="decimal" name="cash" placeholder="0" autocomplete="off"></span></label>
+              </div>
+            </fieldset>
+            <div class="try-row try-row-2">
+              <label>Bills before payday<span class="try-input"><span aria-hidden="true">GH₵</span><input type="text" inputmode="decimal" name="bills" placeholder="0" autocomplete="off"></span></label>
+              <label>Your next payday<span class="try-input try-date"><input type="date" name="payday" autocomplete="off"></span></label>
+            </div>
+            <label class="try-buffer">Keep back for safety <small>Optional</small><span class="try-input"><span aria-hidden="true">GH₵</span><input type="text" inputmode="decimal" name="buffer" placeholder="0" autocomplete="off"></span></label>
+          </form>
+          <div class="try-result">
+            <div class="vcard sts-card">
+              <small>Safe to spend today</small>
+              <div class="sts-amount" data-try="amount">GH₵ –</div>
+              <div class="sts-meta sts-until" data-try="how" role="status" aria-live="polite">Add your money and your next payday.</div>
+            </div>
+            <p class="try-note">An estimate from what you typed, rounded down. Kyeremi keeps this up to date every day, as you spend.</p>
+            <a class="btn try-cta" href="#join">Get this every morning</a>
           </div>
         </div>
       </div>
@@ -385,6 +423,6 @@
   </footer>
 
   <script src="assets/config.js?v=20261006"></script>
-  <script src="assets/main.js?v=20261014"></script>
+  <script src="assets/main.js?v=20261102"></script>
 </body>
 </html>

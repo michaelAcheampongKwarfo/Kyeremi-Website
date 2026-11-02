@@ -217,6 +217,77 @@
 })();
 
 
+// "What's safe for you today?": the app's sum for one moment. Money less bills
+// and what's kept back, over the days through payday (payday counts, as in
+// the app's calculator), rounded down to the cedi so it's never too high.
+// Nothing typed is stored or sent.
+(() => {
+  const form = document.querySelector('.try-form');
+  if (!form) return;
+  const amount = document.querySelector('[data-try="amount"]');
+  const how = document.querySelector('[data-try="how"]');
+  const moneyFields = ['momo', 'bank', 'cash'];
+
+  // Whole pesewas, so sums never pick up stray fractions. Commas are fine
+  // ("1,500"); anything that isn't a positive amount counts as nothing.
+  const pesewas = (name) => {
+    const value = Number(form.elements[name].value.replace(/[\s,]/g, ''));
+    return Number.isFinite(value) && value > 0 ? Math.round(value * 100) : 0;
+  };
+  const cedis = (p) => `GH₵ ${Math.floor(p / 100).toLocaleString('en-GB')}`;
+  const today = () => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  };
+  const payday = () => {
+    const [y, m, d] = form.elements.payday.value.split('-').map(Number);
+    return y ? new Date(y, m - 1, d) : null;
+  };
+
+  const show = (figure, line) => {
+    amount.textContent = figure;
+    how.textContent = line;
+  };
+
+  const update = () => {
+    const money = moneyFields.reduce((sum, name) => sum + pesewas(name), 0);
+    const bills = pesewas('bills');
+    const buffer = pesewas('buffer');
+    const date = payday();
+    if (!money || !date) return show('GH₵ –', 'Add your money and your next payday.');
+
+    const days = Math.round((date - today()) / 86400000) + 1;
+    if (days < 1) return show('GH₵ –', 'Pick a payday from today onwards.');
+
+    const left = money - bills - buffer;
+    if (left <= 0) {
+      return show(
+        'GH₵ 0',
+        left === 0
+          ? 'Your bills and what you keep back use all your money.'
+          : `That's ${cedis(-left + 99)} more than you have, before you spend anything.`,
+      );
+    }
+    const taken = [bills && `${cedis(bills + 99)} bills`, buffer && `${cedis(buffer + 99)} kept back`]
+      .filter(Boolean)
+      .map((part) => ` − ${part}`)
+      .join('');
+    show(
+      cedis(left / days),
+      `${cedis(money)}${taken}, ${days === 1 ? 'for today' : `over ${days} days, counting today and payday`}.`,
+    );
+  };
+
+  form.elements.payday.min = (() => {
+    const d = today();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  })();
+  form.addEventListener('input', update);
+  // Enter on a phone keyboard must not reload the page.
+  form.addEventListener('submit', (event) => event.preventDefault());
+})();
+
+
 // Floating "Join the waitlist" button: visible once the hero form has
 // scrolled away, hidden again while any waitlist form is on screen.
 (() => {
