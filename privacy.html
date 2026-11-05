@@ -36,8 +36,8 @@
       <div class="container">
         <span class="label">Privacy</span>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: <span>3 November 2026</span></p>
-        <div class="legal-summary"><p><strong>The short version.</strong> Kyeremi never holds or moves your money and never asks for your MoMo PIN or bank password. We collect only what Kyeremi needs to work, we never sell your data, and you can delete your account and everything with it at any time.</p></div>
+        <p class="updated">Last updated: <span>[release date]</span></p>
+        <div class="legal-summary"><p><strong>The short version.</strong> Kyeremi never holds or moves your money and never asks for your MoMo PIN or bank password. <strong>You choose where your records live:</strong> on your phone only, with no account, or in a backup that is locked on your phone before it leaves, so only you can open it, not even us. Your messages never leave your phone. We never sell your data, show ads or track you, and you can delete everything at any time.</p></div>
       </div>
     </section>
     <div class="container legal-body">
@@ -66,6 +66,7 @@
 
         <h2 id="what-we-collect">What we collect</h2>
         <h3>When you create an account</h3>
+        <p>You only need an account if you turn on backup. If you keep your records on this phone only, Kyeremi has no account for you and we hold none of the information below; the first name you give in the app stays on your phone.</p>
         <ul>
           <li><strong>Your name</strong> (first and last).</li>
           <li><strong>Your email address</strong>, if you sign in with Google, and the basic profile Google shares with us (name and email).</li>
@@ -79,22 +80,27 @@
           <li>Bills, your payday schedule, savings goals and contributions, and your safety buffer.</li>
         </ul>
         <h2 id="where-your-money-records-are-kept-and-why">Where your money records are kept, and why</h2>
-        <p>Your accounts, balances, transactions, bills, goals and safety buffer are kept <strong>on your phone first</strong>, in Kyeremi's private app storage, with a <strong>backup copy</strong> on our servers while you're signed in.</p>
+        <p>Your accounts, balances, transactions, bills, goals and safety buffer are always kept <strong>on your phone</strong>, in Kyeremi's private app storage. When you set Kyeremi up, you choose whether they also have a backup. Nothing is picked for you, and you can change it any time in Settings.</p>
         <ul>
           <li><strong>On your phone:</strong> every screen reads from your phone, so Kyeremi works fully without internet or data bundles. Android keeps each app's storage separate, so other apps can't read Kyeremi's data, and phones running modern Android encrypt this storage.</li>
-          <li><strong>Backed up:</strong> a few seconds after you make a change (and whenever you're back online), Kyeremi copies it to your backup, so a lost or new phone doesn't mean lost records.</li>
+          <li><strong>This phone only:</strong> nothing leaves your phone and you don't need an account. If you lose your phone, reset it or delete Kyeremi, your records can't be brought back, by you or by us.</li>
+          <li><strong>Back up, encrypted:</strong> a few seconds after you make a change (and whenever you're back online), Kyeremi locks it on your phone and then copies it to your backup, so a lost or new phone doesn't mean lost records.</li>
         </ul>
-        <p>We have turned off Android's automatic app backup for Kyeremi, so your records are not also copied into a Google Drive backup without you knowing. Kyeremi's own backup is the only copy outside your phone.</p>
+        <p>We have turned off Android's automatic app backup for Kyeremi, so your records are not also copied into a Google Drive backup without you knowing. Kyeremi's own backup, if you turn it on, is the only copy outside your phone.</p>
 
-        <h3>What the backup holds</h3>
+        <h3>How the backup is locked</h3>
         <ul>
-          <li><strong>Backed up:</strong> your accounts (names, balances and, if you added them, the last 4 digits), transactions, bills, payday schedule, goals and contributions, and your safety buffer.</li>
-          <li><strong>Never backed up:</strong> full account or card numbers (Kyeremi never has them), your MoMo PIN or passwords, and phone-only settings such as reminder times and App lock.</li>
-          <li><strong>Who can read it:</strong> through the app, only you. Our database lets each person read and change only their own records. We can access it only to run and support Kyeremi, and we never sell it. Data is encrypted in transit and stored with our database provider, Supabase, whose servers may be outside Ghana.</li>
-          <li><strong>How long it's kept:</strong> until you delete your account, which deletes the backup with it. Records you delete in the app are marked deleted in the backup too, so they disappear from your other phones.</li>
+          <li><strong>Locked before it leaves your phone.</strong> Every record is encrypted on your phone (AES-256-GCM) with a key that is made on your phone. Our servers receive and keep only the locked copy. We can't read it, and neither can our database provider or anyone who gets into our database.</li>
+          <li><strong>What our servers can see:</strong> that you have a backup, how many records it holds and roughly how big they are, and when each one last changed. Not what they are: not names, amounts, notes, categories or even whether a record is a transaction or a bill.</li>
+          <li><strong>Your key stays with you.</strong> It is kept in your phone's secure storage (Android Keystore or the iPhone Keychain). Android also keeps a copy in your Google account through Google's Block Store, locked with your phone's screen lock, so neither Google nor we can read it; a new phone set up from your Google account gets it back by itself. On iPhone, the copy is kept in your iCloud Keychain.</li>
+          <li><strong>Your recovery key.</strong> When you turn on backup, Kyeremi shows you a recovery key (it starts with KYRM) to save somewhere safe. It opens your backup on a phone that doesn't have the automatic copy, including when you move between Android and iPhone. We don't keep it and can't send it to you again. Our servers keep only your backup's key locked with your recovery key, which we can't open. While you still have your phone, you can make a new recovery key in Settings.</li>
+          <li><strong>If you lose both</strong> your phone's copy of the key and your recovery key, your backup can't be opened, not even by us. You can then start a new backup, which deletes the old one.</li>
+          <li><strong>Never backed up:</strong> full account or card numbers (Kyeremi never has them), your MoMo PIN or passwords, the text of your messages, and phone-only settings such as reminder times and App lock.</li>
+          <li><strong>Where it's stored:</strong> with our database provider, Supabase, whose servers may be outside Ghana. Our database only lets each person read and change their own (locked) records.</li>
+          <li><strong>How long it's kept:</strong> until you turn backup off or delete your account. Turning backup off deletes the locked copy on our servers, the locked key and the automatic copy of your key; the records on your phone stay. Records you delete in the app are marked deleted inside your locked backup too, so they disappear from your other phones.</li>
         </ul>
         <div class="callout">
-          <p><strong>New or lost phone?</strong> Install Kyeremi and sign in with the same account; your records are restored automatically. Changes made while offline are backed up when you reconnect. If you sign out before they've been backed up, Kyeremi warns you first.</p>
+          <p><strong>New or lost phone?</strong> Install Kyeremi and sign in with the same account. Your backup opens by itself if the phone has the automatic copy of your key; otherwise Kyeremi asks for your recovery key. Changes made while offline are backed up when you reconnect.</p>
         </div>
 
         <h2 id="app-lock">App lock</h2>
@@ -114,12 +120,12 @@
         </ul>
 
         <h2 id="automatic-sms-capture-android-optional">Automatic SMS capture (Android, optional)</h2>
-        <p>On Android you can let Kyeremi log your MoMo and bank transactions from their text messages, in Settings → Auto-capture. It is <strong>off by default</strong>, and Kyeremi explains it before Android asks for the "receive SMS" permission.</p>
+        <p>On Android you can let Kyeremi log your MoMo and bank transactions from their text messages. Kyeremi asks once while you set it up ("Read money texts for you?"), where you can choose Turn on or Not now, and you can change it any time in Settings → Auto-capture. It is <strong>off unless you turn it on</strong>, and Kyeremi explains it before Android asks for the "receive SMS" permission.</p>
         <ul>
           <li><strong>New messages only.</strong> Kyeremi receives SMS as they arrive. It does not open your inbox or read older messages.</li>
           <li><strong>Only money senders.</strong> Kyeremi reads messages only from the mobile money and bank senders it supports: MTN MoMo ("MobileMoney"), Telecel Cash ("T-CASH"), Fidelity Bank ("FIDELITY"), Zenith Bank ("ZENITHBANK"), Consolidated Bank ("CBG"), Ecobank ("ECOBANK"), CalBank ("CALBANK") and Affinity ("AFFINITY"). We update this list whenever we add a sender. Every other message is ignored as it arrives, without being read or kept.</li>
           <li><strong>Read on your phone.</strong> The amount, the other party, any fee and the date are worked out on your phone, even offline. A money message waits in Kyeremi's private storage on your phone until it has been read, then it is removed. If Kyeremi can't read one yet (a new format, or an account you haven't added), it keeps that message on your phone for up to 30 days so you can check it and log it yourself, then deletes it. The text of your messages is never uploaded to us or anyone else.</li>
-          <li><strong>You confirm each one.</strong> Each message becomes a transaction waiting in Needs Review. Like transactions you type in, it is backed up while you're signed in (see "What the backup holds").</li>
+          <li><strong>You confirm each one.</strong> Each message becomes a transaction waiting in Needs Review. Like transactions you type in, it stays on your phone, and is backed up, locked, only if you turned backup on (see "How the backup is locked").</li>
           <li><strong>Remembered on your phone:</strong> which category you chose for a person or shop, so their next message starts there, which messages were already added, so none is logged twice, and the latest balance each money message showed, so Kyeremi can tell you when its figure for that account doesn't match. These stay on your phone.</li>
           <li><strong>New message formats.</strong> Once a day Kyeremi downloads a small file listing the money message formats it can read, so it learns new ones without an app update. Everyone gets the same file, and nothing about you or your messages is sent to download it. Kyeremi uses the file only if it carries our digital signature.</li>
           <li><strong>Turn it off any time</strong> in Settings → Auto-capture, or remove the SMS permission in your phone's settings.</li>
@@ -128,7 +134,7 @@
 
         <h2 id="how-we-use-your-information">How we use your information</h2>
         <ul>
-          <li>To create and secure your account and sign you in.</li>
+          <li>If you turn on backup: to create and secure your account, sign you in and keep your locked backup.</li>
           <li>To show your Safe-to-Spend, bills, goals and insights. These are worked out from what you enter.</li>
           <li>To reply when you contact us. If you use "Report a problem", your email includes your app version and phone model so we can help.</li>
           <li>To email or text you once when Kyeremi launches, if you joined the waitlist. If you also offered to test Kyeremi, we contact you a few times about testing: the invitation, and to ask what you think.</li>
@@ -138,8 +144,9 @@
         <h2 id="who-we-share-it-with">Who we share it with</h2>
         <p>We use a small number of service providers who process data on our behalf, only to run Kyeremi:</p>
         <ul>
-          <li><strong>Supabase</strong>: our account and database provider (sign-in, your profile, your backup and the waitlist).</li>
-          <li><strong>Google</strong>: if you choose "Continue with Google", to confirm who you are.</li>
+          <li><strong>Supabase</strong>: our account and database provider (sign-in, your profile and your locked backup if you turn backup on, the waitlist, and the file of money message formats). It holds your backup only in its locked form.</li>
+          <li><strong>Google</strong>: if you choose "Continue with Google", to confirm who you are. On Android with backup on, Google's Block Store keeps the copy of your backup key in your Google account, locked with your screen lock so Google can't read it.</li>
+          <li><strong>Apple</strong>: on iPhone with backup on, your iCloud Keychain keeps the copy of your backup key, end-to-end encrypted by Apple.</li>
           <li><strong>Resend</strong>: to send sign-in codes by email, if you choose "Continue with email". Resend receives your email address and the code.</li>
           <li><strong>Vynfy</strong>: our SMS provider in Ghana, to send sign-in codes by text message when phone sign-in is available, and the launch text if you joined the waitlist with your phone number. Vynfy receives your phone number and the message.</li>
         </ul>
@@ -148,6 +155,7 @@
         <h2 id="how-we-protect-it">How we protect it</h2>
         <ul>
           <li>Your money records stay on your phone, in storage other apps can't read.</li>
+          <li>If you turn on backup, every record is locked on your phone before it's sent, with a key we never have.</li>
           <li>Data sent between the app and our servers is encrypted in transit.</li>
           <li>Our database only lets each person read and change their own records.</li>
           <li>App lock uses your phone's fingerprint, face unlock or passcode (see above).</li>
@@ -155,18 +163,18 @@
         </ul>
 
         <h2 id="how-long-we-keep-it">How long we keep it</h2>
-        <p>We keep your account information and backup until you delete your account. Records on your phone stay there until you sign out, delete your account or uninstall the app. Waitlist emails and phone numbers are kept until Kyeremi launches and we have contacted you, or until you ask us to remove yours.</p>
+        <p>If you have an account, we keep your account information until you delete it, and your locked backup until you turn backup off or delete your account. Records on your phone stay there until you delete them in Kyeremi (Settings → Delete everything), sign out, delete your account or uninstall the app. Waitlist emails and phone numbers are kept until Kyeremi launches and we have contacted you, or until you ask us to remove yours.</p>
 
         <h2 id="your-rights">Your rights</h2>
         <p>Under the Data Protection Act, you can ask to see the information we hold about you, have it corrected, or have it deleted, and you can object to how we use it.</p>
         <ul>
-          <li><strong>Delete everything:</strong> in the app, go to Profile → Settings → Delete account and data. Can't use the app? See <a href="delete-account.html">Delete my account</a>.</li>
+          <li><strong>Delete everything:</strong> on this phone only, go to Profile → Settings → Delete everything; we hold nothing else about you. With backup on, go to Profile → Settings → Delete account and data, or turn backup off to delete only the backup. Can't use the app? See <a href="delete-account.html">Delete my account</a>.</li>
           <li><strong>Anything else:</strong> email <a data-config-mailto href="#"><span data-config="supportEmail">our support email</span></a>. We reply within 30 days.</li>
         </ul>
         <p>If you're unhappy with how we handle your information, you can complain to Ghana's <strong>Data Protection Commission</strong>, the regulator for personal data in Ghana.</p>
 
         <h2 id="children">Children</h2>
-        <p>Kyeremi is for people aged 18 and over. When you create an account, you confirm that you are 18 or older, and the app is listed for adults in app stores. Because Kyeremi never holds money, we don't ask for ID documents to check age. If you believe someone under 18 has created an account, email us and we will delete it.</p>
+        <p>Kyeremi is for people aged 18 and over. When you set Kyeremi up, you confirm that you are 18 or older, and the app is listed for adults in app stores. Because Kyeremi never holds money, we don't ask for ID documents to check age. If you believe someone under 18 has created an account, email us and we will delete it.</p>
 
         <h2 id="changes-to-this-policy">Changes to this policy</h2>
         <p>If we change this policy, we'll update the date at the top. For important changes, we'll tell you in the app before they take effect.</p>
